@@ -1,0 +1,469 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Winabler | Fast, Trustworthy, Rock-Solid AI Solutions&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--winabler-green: #c9e76d;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--winabler-grey: #888;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--winabler-dark: #222;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg-light: #f8fafc;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card-bg: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: 'Segoe UI', 'Arial', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg-light);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 24px 32px 0 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logo {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 48px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-right: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 48px 32px 32px 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--winabler-green) 0%, #b2e495 100%);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 2.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero h2 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.hero-btns {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 12px 28px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.winabler-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.outline-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.grey-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Trust/Social */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.trust-section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 900px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 32px auto 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 12px rgba(200,235,125,0.08);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logos {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.logos img {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 3px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 1px 3px rgba(120,180,100,0.07);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.testimonials {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-style: italic;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.impact-stats {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.impact-stats span {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Packages */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.packages-section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 1100px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px auto 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-cards {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 30px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 12px rgba(120,180,100,0.09);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 28px 22px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 300px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-width: 230px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-card h3 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-card p {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-card ul {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-card li {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.98rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.package-card .btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 9px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.98rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.compare-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 8px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 10px 0 20px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Cafeteria / Build Your Own */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cafeteria-section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 950px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 30px auto 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 34px 18px 28px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 12px rgba(200,235,125,0.09);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cafeteria-section h3 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cafeteria-grid {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cafeteria-item {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #eef8d7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 9px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 2px solid var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>transition: background 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cafeteria-item:hover, .selected {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.cafeteria-btns {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Contact Form */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.contact-section {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card-bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 40px auto 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 32px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 2px 12px rgba(120,180,100,0.07);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.contact-section h3 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 7px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.contact-section form {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.contact-section input, .contact-section select, .contact-section textarea {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1.5px solid var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 9px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.contact-section .btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.privacy-note {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.94rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>/* Footer */</p>
+<p class="p1"><span class="Apple-converted-space">    </span>footer {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--winabler-green);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 18px 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 38px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-links {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.99rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-social {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-social a {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-grey);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 3px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.footer-badges {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 7px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--winabler-dark);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.95rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 800px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.package-cards, .impact-stats, .testimonials { flex-direction: column; align-items:center;}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.packages-section {padding:0 6px;}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 600px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.header { flex-direction: column; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.card, .package-card { width: 96vw; min-width: unset; }</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.cafeteria-section { padding: 22px 4vw; }</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Header --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;img src="Winabler-Logo-White-Rectangular.jpg" class="logo" alt="Winabler Logo" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Hero --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="hero"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Ready to win at e-commerce? Experience the future now—hyper-fast, bulletproof AI that puts your brand ahead, every time, all the time.&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h2&gt;Winabler: Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="hero-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn winabler-btn"&gt;View Service Packages&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn outline-btn"&gt;Build Your Own Solution&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn grey-btn"&gt;Book a Free Consultation&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Trust Signals &amp; Social Proof --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="trust-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="logos"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://via.placeholder.com/75x30?text=Client+1" alt="Client 1"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://via.placeholder.com/75x30?text=Client+2" alt="Client 2"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;img src="https://via.placeholder.com/75x30?text=Client+3" alt="Client 3"/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="testimonials"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;“Winabler helped us double our monthly sales—rock solid service!”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div&gt;“Support queries resolved in minutes, not hours!”&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="impact-stats"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;150+&lt;/span&gt; brands empowered</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;99%&lt;/span&gt; client satisfaction rate</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;span&gt;40+&lt;/span&gt; languages supported</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Service Packages --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="packages-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="package-cards"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="package-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Starter: Essential AI Enablement for Digital Commerce&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Accelerate your launch with rapid AI tools tailored for new and growing D2C brands. Built for simplicity and quick impact.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;AI chatbot deployment (web, WhatsApp, email)&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Personalized product recommendations&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Seamless integration and staff training&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn winabler-btn"&gt;Learn More&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="package-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Growth: Automated Customer Engagement &amp; Operations Optimization&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Power up your customer support and operations. Deeper automation with rapid issue resolution, smarter recommendations, and inventory insight—move fast and scale smarter.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;End-to-end customer support automation&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Advanced recommendation engine&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Inventory and demand forecasting&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;WhatsApp commerce integration&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Abandoned cart recovery sequences&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn winabler-btn"&gt;Learn More&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="package-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Enterprise: AI-Powered Digital Transformation &amp; Intelligent Decision Support&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;p&gt;Command your market with predictive analytics, dynamic pricing, smart fulfillment, and top-tier compliance. Leadership-class AI for scaling D2C brands.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Predictive analytics &amp; risk detection&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Dynamic pricing optimization&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Intelligent logistics &amp; courier allocation&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;RTO reduction and address verification&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;Robust data privacy and API integration&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;button class="btn winabler-btn"&gt;Learn More&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button class="compare-btn"&gt;Compare Packages&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Build Your Own / Cafeteria Approach --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="cafeteria-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Prefer a custom solution? Build Your Own Package!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;p&gt;Mix and match AI services for your perfect fit. Get an instant estimate and total flexibility.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="cafeteria-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;AI Chatbots (Web/WhatsApp/Email)&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Personalized Recommendations&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Advanced Recommend Engine&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Customer Support Automation&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Inventory &amp; Demand Forecasting&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;WhatsApp Commerce Integration&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Abandoned Cart Recovery&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Predictive Analytics&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Dynamic Pricing&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Intelligent Fulfillment/Logistics&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;RTO Reduction/Verification&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Data Privacy/Compliance&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Tech Stack/API Integration&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="cafeteria-item"&gt;Staff Onboarding/Training&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="cafeteria-btns"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn winabler-btn"&gt;Get Instant Quote&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn outline-btn"&gt;Book Consultation&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Contact &amp; Consultation Form --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;section class="contact-section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h3&gt;Let’s Accelerate Your Win!&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" placeholder="Name" required /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" placeholder="Company Name" required /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="email" placeholder="Email Address" required /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="tel" placeholder="Phone Number" required /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;input type="text" placeholder="Role/Position" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option&gt;Interested In&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option&gt;Starter Package&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option&gt;Growth Package&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option&gt;Enterprise Package&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;option&gt;Custom Package&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/select&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;textarea rows="3" placeholder="Additional Requirements"&gt;&lt;/textarea&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn winabler-btn" type="submit"&gt;Schedule a Call&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn outline-btn" type="button"&gt;Request a Proposal&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn grey-btn" type="button"&gt;WhatsApp Chat&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/form&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="privacy-note"&gt;Your privacy is protected. We never share your information. GDPR compliant.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;footer&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-links"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#"&gt;About&lt;/a&gt; | &lt;a href="#"&gt;Service Packages&lt;/a&gt; | &lt;a href="#"&gt;Build Your Own&lt;/a&gt; | &lt;a href="#"&gt;Contact&lt;/a&gt; | &lt;a href="#"&gt;Privacy Policy&lt;/a&gt; | &lt;a href="#"&gt;Terms &amp; Conditions&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-social"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#" title="LinkedIn"&gt;&amp;#128100;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#" title="Twitter"&gt;&amp;#128081;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;a href="#" title="Instagram"&gt;&amp;#128247;&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="footer-badges"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>GDPR Compliant • Made in India</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div&gt;© 2025 Winabler. All rights reserved.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/footer&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
