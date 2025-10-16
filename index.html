@@ -2,218 +2,266 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Winabler | Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce</title>
+  <title>Winabler | Smart, Secure, Cutting-Edge AI for D2C Brands</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- SF Pro Display + Inter Font Setup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f8fafc;
-      color: #222;
+      background: linear-gradient(135deg, #e8ffe7 0%, #d7e6ff 100%);
+      font-family: 'Inter', 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
+      color: #181c24;
+      min-height: 100vh;
     }
     .header {
-      background: #fff;
       display: flex;
       align-items: center;
-      padding: 24px 32px 0 32px;
-      box-shadow: 0 2px 8px rgba(200,235,125,0.03);
+      justify-content: flex-start;
+      padding: 32px 48px 0 48px;
+      background: rgba(255,255,255,0.8);
+      backdrop-filter: blur(8px);
+      border-bottom-left-radius: 36px;
+      border-bottom-right-radius: 36px;
+      box-shadow: 0 6px 28px rgba(35,44,99,0.14);
     }
     .logo {
-      height: 48px;
-      margin-right: 24px;
+      width: 72px;
+      height: 72px;
+      background: none;
+      object-fit: contain;
+      margin-right: 36px;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px rgba(84,191,255,0.06);
     }
     .header-title {
-      font-size: 1.8rem;
-      font-weight: 700;
+      font-size: 2.05rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: #161a23;
     }
     .hero {
-      padding: 48px 32px 32px 32px;
+      padding: 60px 24px 54px 24px;
       text-align: center;
-      background: linear-gradient(90deg, #c9e76d 0%, #b2e495 100%);
+      background: linear-gradient(120deg, rgba(201,231,109,0.98) 0%, #b2e495 54%, #e1edffc8 100%);
+      border-radius: 42px;
+      margin: 32px 0;
+      box-shadow: 0 12px 32px rgba(156,186,255,0.11);
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .hero h1 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-      color: #222;
+      font-size: 2.9rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      color: #191b1f;
+      letter-spacing: 0.02em;
     }
     .hero h2 {
-      font-size: 1.23rem;
-      color: #888;
-      margin-bottom: 28px;
-      font-weight: 500;
+      font-size: 1.25rem;
+      color: #3f464e;
+      margin-bottom: 38px;
+      font-weight: 600;
     }
     .hero-btns {
       display: flex;
       justify-content: center;
-      gap: 14px;
-      margin-top: 20px;
+      gap: 18px;
+      margin-top: 30px;
       flex-wrap: wrap;
     }
     .btn {
-      padding: 12px 28px;
-      font-size: 1rem;
-      border-radius: 5px;
+      padding: 16px 36px;
+      font-size: 1.11rem;
+      font-weight: 700;
+      border-radius: 11px;
       border: none;
-      font-weight: 600;
       cursor: pointer;
-      margin: 5px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      transition: background 0.2s;
+      margin: 7px;
+      box-shadow: 0 2px 18px rgba(30,160,130,0.085);
+      transition: box-shadow .23s,transform .22s,background .16s;
     }
+    .btn:active, .btn:focus {transform: scale(0.97);}
     .winabler-btn {
-      background: #c9e76d;
-      color: #222;
+      background: linear-gradient(90deg, #88dc65 0%, #d0f26c 100%);
+      color: #181c24;
       border: 2px solid #c9e76d;
+    }
+    .winabler-btn:hover {
+      background: linear-gradient(90deg, #62c355 0%, #f1ffdf 100%);
+      box-shadow: 0 8px 32px rgba(133,210,121,.32);
     }
     .outline-btn {
       background: transparent;
-      color: #222;
-      border: 2px solid #c9e76d;
+      color: #299f36;
+      border: 2px solid #95e293;
+    }
+    .outline-btn:hover {
+      background: #e9faee;
+      box-shadow: 0 4px 24px rgba(141,209,101,0.13);
     }
     .grey-btn {
-      background: #888;
+      background: #424764;
       color: #fff;
-      border: 2px solid #888;
+      border: 2px solid #4f5063;
+    }
+    .grey-btn:hover {
+      background: #232745;
+      box-shadow: 0 6px 24px rgba(176,180,200,0.15);
     }
     .trust-section {
-      max-width: 910px;
-      margin: 32px auto 0 auto;
-      background: #fff;
-      border-radius: 16px;
-      padding: 32px;
-      box-shadow: 0 2px 12px rgba(200,235,125,0.08);
+      max-width: 980px;
+      margin: 38px auto 0 auto;
+      background: rgba(255,255,255,0.91);
+      border-radius: 18px;
+      padding: 38px;
+      box-shadow: 0 3px 30px rgba(87,156,214,0.09);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 20px;
+      gap: 18px;
+      font-size: 1.07rem;
     }
-    .logos {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
+    .logos {display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap;justify-content:center;}
     .logos img {
-      height: 30px;
+      height: 38px;
       background: #fff;
-      border-radius: 3px;
-      box-shadow: 0 1px 3px rgba(120,180,100,0.07);
+      border-radius: 5px;
+      box-shadow: 0 1px 9px rgba(120,180,200,0.11);
+      padding: 4px;
     }
     .testimonials {
       display: flex;
-      gap: 18px;
+      gap: 28px;
       font-style: italic;
+      color: #252d44;
     }
     .impact-stats {
       display: flex;
-      gap: 32px;
-      justify-content: center;
-      font-size: 1.1rem;
-      color: #222;
+      gap: 28px;
+      justify-content:center;
+      font-size:1.11rem;
+      color:#191c2c;
     }
     .impact-stats span {
       font-weight: bold;
-      color: #c9e76d;
+      color: #78dc53;
     }
     .packages-section {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(120,180,100,0.05);
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      padding: 32px;
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      box-shadow: 0 3px 30px rgba(87,156,214,0.08);
+      max-width: 980px;
+      margin: 54px auto 0 auto;
+      padding: 40px;
     }
     .package-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 24px;
-      margin-top: 24px;
-      justify-content: center;
+      gap: 34px;
+      margin-top: 26px;
+      justify-content:center;
     }
     .package {
-      border-radius: 8px;
-      background: #f3f4f6;
-      box-shadow: 0 2px 8px rgba(100,200,120,0.05);
-      flex: 1;
-      min-width: 220px;
-      max-width: 280px;
-      padding: 24px 18px;
-      margin: 10px;
-      font-size: 1.03rem;
+      border-radius: 11px;
+      background: rgba(245,247,255,0.97);
+      box-shadow: 0 3px 14px rgba(100,200,120,0.06);
+      flex:1;
+      min-width:230px;
+      max-width:330px;
+      padding:29px 18px;
+      margin:10px;
+      font-size:1.12rem;
+      transition:box-shadow .16s,transform .16s;
     }
-    .package-title {
-      color: #222;
-      font-weight: 600;
-      font-size: 1.12rem;
-      margin-bottom: 8px;
-    }
+    .package:hover {box-shadow: 0 8px 30px rgba(120,210,140,.16);transform:translateY(-5px);}
+    .package-title {color: #222;font-weight:700;font-size:1.13rem;margin-bottom:12px;}
     .custom-section {
       background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(120,180,100,0.05);
-      max-width: 900px;
-      margin: 40px auto 0 auto;
-      padding: 32px;
+      border-radius: 18px;
+      box-shadow: 0 3px 30px rgba(120,180,200,0.09);
+      max-width: 980px;
+      margin: 48px auto 0 auto;
+      padding: 42px;
     }
-    .custom-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin-top: 18px;
-      justify-content: center;
-      font-size: 1.02rem;
-    }
+    .custom-list {display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;justify-content:center;}
     .custom-item {
-      background: #fcfcfc;
-      border: 1px solid #ececec;
-      border-radius: 6px;
-      padding: 8px 12px;
-      margin: 4px 0;
-      min-width: 140px;
+      background: rgba(238,248,245,0.92);
+      border: 1px solid #e2eecb;
+      border-radius: 8px;
+      padding: 8px 14px;
+      margin: 3px 0;
+      min-width:140px;
+      font-weight:600;
+      color:#384a54;
+      letter-spacing:0.02em;
+      font-size:1.02rem;
+      transition:background .13s,box-shadow .15s;
     }
+    .custom-item:hover {background: #e5ffef;box-shadow:0 3px 14px rgba(86,216,141,.09);}
     .contact-section {
-      background: #f8fafc;
-      max-width: 860px;
-      margin: 36px auto 0 auto;
-      padding: 36px 20px;
-      border-radius: 16px;
-      box-shadow: 0 2px 8px rgba(200,235,125,0.04);
-      text-align: center;
+      background: linear-gradient(92deg, #f8fafc 40%, #c9e76d33 100%);
+      max-width: 880px;
+      margin: 54px auto 0 auto;
+      padding: 44px 30px;
+      border-radius: 20px;
+      box-shadow: 0 3px 18px rgba(200,235,125,0.10);
+      text-align:center;
     }
-    .contact-form {
-      display: grid;
-      gap: 14px;
-      margin: 18px auto 0 auto;
-      max-width: 400px;
-    }
+    .contact-form {display:grid;gap:14px;margin:18px auto 0 auto;max-width:420px;}
     input, textarea, select {
-      padding: 8px;
-      border-radius: 6px;
-      border: 1px solid #e2e2e2;
-      font-size: 1rem;
-      font-family: inherit;
+      padding:12px;
+      border-radius:9px;
+      border:1px solid #dee7e6;
+      font-size:1.03rem;font-family:inherit;
+      background:rgba(255,255,255,0.93);
+      font-weight:500;
+      transition:border .1s;
     }
+    input:focus, textarea:focus, select:focus {border:1.8px solid #a8e9a7;}
     .footer {
-      background: #fff;
+      background: rgba(255,255,255,0.9);
       text-align: center;
-      padding: 24px 0;
-      color: #888;
-      font-size: 0.93rem;
-      margin-top: 32px;
-      border-top: 1px solid #e5e7eb;
+      padding: 34px 0 19px 0;
+      color: #444e64;
+      font-size:1.04rem;
+      margin-top:44px;
+      border-top:1px solid #e5e7eb;
+      border-bottom-right-radius:18px;
+      border-bottom-left-radius:18px;
     }
-    @media (max-width: 700px) {
-      .header-title { font-size: 1.14rem; }
-      .hero h1 { font-size: 1.32rem; }
-      .hero h2{ font-size: 0.97rem;}
+    @media (max-width: 900px) {
+      .header, .hero, .trust-section, .packages-section, .custom-section, .contact-section {
+        padding-left: 7vw; padding-right: 7vw;
+      }
+      .header-title {font-size:1.17rem;}
+      .hero h1 {font-size:1.45rem;}
+    }
+    @media (max-width: 600px) {
+      .header-title {font-size:1.03rem;}
+      .hero h1 {font-size:1.02rem;}
+      .package-list, .custom-list {flex-direction:column;}
+      .header {padding:18px 8px 0 8px;}
+      .footer {padding:22px 0;}
     }
   </style>
 </head>
 <body>
   <div class="header">
-    <img src="Winabler-Logo-White-Rectangular.jpg" class="logo" alt="Winabler Logo"/>
+    <!-- Placeholder modern SVG logo (replace with your logo file for brands) -->
+    <svg class="logo" viewBox="0 0 48 48">
+      <defs>
+        <linearGradient id="wgreen" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#88dc65"/>
+          <stop offset="100%" stop-color="#b7e27a"/>
+        </linearGradient>
+      </defs>
+      <circle cx="24" cy="24" r="22" fill="url(#wgreen)"/>
+      <text x="50%" y="61%" font-size="24" fill="#242c39" font-family="Inter, 'SF Pro Display'" text-anchor="middle">W</text>
+    </svg>
     <div class="header-title">Winabler: Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce</div>
   </div>
   <section class="hero">
@@ -227,10 +275,13 @@
   </section>
   <section class="trust-section">
     <div class="logos">
-      <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo"/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Client Logo 1"/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Client Logo 2"/>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg" alt="Client Logo 3"/>
+      <!-- Brand and Client Logos -->
+      <svg height="38" viewBox="0 0 38 38">
+        <circle cx="19" cy="19" r="17" fill="#c9e76d"/><text x="50%" y="62%" font-size="18" fill="#181c24" font-family="Inter, 'SF Pro Display'" text-anchor="middle">W</text>
+      </svg>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Client Logo 1" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Client Logo 2" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg" alt="Client Logo 3" />
     </div>
     <div class="testimonials">
       <span>"Winabler helped us double our monthly sales—rock solid service!"</span>
@@ -243,11 +294,10 @@
     </div>
   </section>
   <section class="packages-section">
-    <h2 style="text-align:center; color:#222;">Our Packages</h2>
+    <h2 style="text-align:center; color:#222; font-weight:800; font-size:1.5rem;">Our Packages</h2>
     <div class="package-list">
       <div class="package">
         <div class="package-title">Starter: Essential AI Enablement</div>
-        Accelerate your launch with rapid AI tools tailored for new and growing D2C brands.
         <ul>
           <li>AI chatbot deployment (web, WhatsApp, email)</li>
           <li>Personalized product recommendations</li>
@@ -256,9 +306,8 @@
       </div>
       <div class="package">
         <div class="package-title">Growth: Automated Engagement & Optimization</div>
-        Deeper automation with rapid issue resolution, smarter recommendations, inventory insights.
         <ul>
-          <li>End-to-end support automation</li>
+          <li>Support automation end-to-end</li>
           <li>Advanced recommendation engine</li>
           <li>Inventory & demand forecasting</li>
           <li>WhatsApp commerce integration</li>
@@ -267,7 +316,6 @@
       </div>
       <div class="package">
         <div class="package-title">Enterprise: Digital Transformation & Decision Support</div>
-        Leadership-class AI for scaling D2C brands.
         <ul>
           <li>Predictive analytics & risk detection</li>
           <li>Dynamic pricing optimization</li>
@@ -282,8 +330,8 @@
     </div>
   </section>
   <section class="custom-section">
-    <h2 style="text-align:center; color:#222;">Prefer a Custom Solution?</h2>
-    <div>Mix and match AI services for your perfect fit. Get instant estimate & flexibility:</div>
+    <h2 style="text-align:center; color:#222; font-weight:800;">Prefer a Custom Solution?</h2>
+    <div style="text-align:center; font-weight:600;">Mix and match AI services for your perfect fit. Get instant estimate & flexibility:</div>
     <div class="custom-list">
       <div class="custom-item">AI Chatbots (Web/WhatsApp/Email)</div>
       <div class="custom-item">Personalized Recommendations</div>
@@ -306,7 +354,7 @@
     </div>
   </section>
   <section class="contact-section">
-    <h2 style="color:#222;">Let’s Accelerate Your Win!</h2>
+    <h2 style="color:#222; font-weight:800;">Let’s Accelerate Your Win!</h2>
     <form class="contact-form">
       <input type="text" placeholder="Your Name" required>
       <input type="text" placeholder="Company Name">
@@ -325,7 +373,7 @@
       <button type="submit" class="btn outline-btn">Request a Proposal</button>
       <button type="button" class="btn grey-btn">WhatsApp Chat</button>
     </form>
-    <div style="font-size:0.95rem; color:#888; margin-top:10px;">
+    <div style="font-size:0.99rem; color:#888; margin-top:10px;">
       Your privacy is protected. We never share your information. GDPR compliant.
     </div>
   </section>
