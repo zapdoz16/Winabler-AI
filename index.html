@@ -2,46 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Winabler | Fast, Trustworthy, Rock-Solid AI Solutions</title>
+  <title>Winabler | Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --winabler-green: #c9e76d;
-      --winabler-grey: #888;
-      --winabler-dark: #222;
-      --bg-light: #f8fafc;
-      --card-bg: #fff;
-    }
     body {
       margin: 0;
-      font-family: 'Segoe UI', 'Arial', sans-serif;
-      background: var(--bg-light);
-      color: var(--winabler-dark);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8fafc;
+      color: #222;
     }
     .header {
-      background: var(--card-bg);
+      background: #fff;
       display: flex;
       align-items: center;
       padding: 24px 32px 0 32px;
+      box-shadow: 0 2px 8px rgba(200,235,125,0.03);
     }
     .logo {
       height: 48px;
       margin-right: 24px;
     }
+    .header-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
     .hero {
       padding: 48px 32px 32px 32px;
       text-align: center;
-      background: linear-gradient(90deg, var(--winabler-green) 0%, #b2e495 100%);
+      background: linear-gradient(90deg, #c9e76d 0%, #b2e495 100%);
     }
     .hero h1 {
-      font-size: 2.3rem;
+      font-size: 2.2rem;
       font-weight: 700;
       margin-bottom: 16px;
-      color: var(--winabler-dark);
+      color: #222;
     }
     .hero h2 {
-      font-size: 1.4rem;
-      color: var(--winabler-grey);
+      font-size: 1.23rem;
+      color: #888;
       margin-bottom: 28px;
       font-weight: 500;
     }
@@ -49,7 +47,7 @@
       display: flex;
       justify-content: center;
       gap: 14px;
-      margin-top: 16px;
+      margin-top: 20px;
       flex-wrap: wrap;
     }
     .btn {
@@ -59,30 +57,164 @@
       border: none;
       font-weight: 600;
       cursor: pointer;
+      margin: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       transition: background 0.2s;
     }
     .winabler-btn {
-      background: var(--winabler-green);
-      color: var(--winabler-dark);
-      border: 2px solid var(--winabler-green);
+      background: #c9e76d;
+      color: #222;
+      border: 2px solid #c9e76d;
     }
     .outline-btn {
       background: transparent;
-      color: var(--winabler-dark);
-      border: 2px solid var(--winabler-green);
+      color: #222;
+      border: 2px solid #c9e76d;
     }
     .grey-btn {
-      background: var(--winabler-grey);
+      background: #888;
       color: #fff;
-      border: 2px solid var(--winabler-grey);
+      border: 2px solid #888;
     }
-    /* Additional CSS and page sections here... */
+    .trust-section {
+      max-width: 910px;
+      margin: 32px auto 0 auto;
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 2px 12px rgba(200,235,125,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .logos {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .logos img {
+      height: 30px;
+      background: #fff;
+      border-radius: 3px;
+      box-shadow: 0 1px 3px rgba(120,180,100,0.07);
+    }
+    .testimonials {
+      display: flex;
+      gap: 18px;
+      font-style: italic;
+    }
+    .impact-stats {
+      display: flex;
+      gap: 32px;
+      justify-content: center;
+      font-size: 1.1rem;
+      color: #222;
+    }
+    .impact-stats span {
+      font-weight: bold;
+      color: #c9e76d;
+    }
+    .packages-section {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(120,180,100,0.05);
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      padding: 32px;
+    }
+    .package-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 24px;
+      justify-content: center;
+    }
+    .package {
+      border-radius: 8px;
+      background: #f3f4f6;
+      box-shadow: 0 2px 8px rgba(100,200,120,0.05);
+      flex: 1;
+      min-width: 220px;
+      max-width: 280px;
+      padding: 24px 18px;
+      margin: 10px;
+      font-size: 1.03rem;
+    }
+    .package-title {
+      color: #222;
+      font-weight: 600;
+      font-size: 1.12rem;
+      margin-bottom: 8px;
+    }
+    .custom-section {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(120,180,100,0.05);
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      padding: 32px;
+    }
+    .custom-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 18px;
+      justify-content: center;
+      font-size: 1.02rem;
+    }
+    .custom-item {
+      background: #fcfcfc;
+      border: 1px solid #ececec;
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin: 4px 0;
+      min-width: 140px;
+    }
+    .contact-section {
+      background: #f8fafc;
+      max-width: 860px;
+      margin: 36px auto 0 auto;
+      padding: 36px 20px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px rgba(200,235,125,0.04);
+      text-align: center;
+    }
+    .contact-form {
+      display: grid;
+      gap: 14px;
+      margin: 18px auto 0 auto;
+      max-width: 400px;
+    }
+    input, textarea, select {
+      padding: 8px;
+      border-radius: 6px;
+      border: 1px solid #e2e2e2;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .footer {
+      background: #fff;
+      text-align: center;
+      padding: 24px 0;
+      color: #888;
+      font-size: 0.93rem;
+      margin-top: 32px;
+      border-top: 1px solid #e5e7eb;
+    }
+    @media (max-width: 700px) {
+      .header-title { font-size: 1.14rem; }
+      .hero h1 { font-size: 1.32rem; }
+      .hero h2{ font-size: 0.97rem;}
+    }
   </style>
 </head>
 <body>
   <div class="header">
     <img src="Winabler-Logo-White-Rectangular.jpg" class="logo" alt="Winabler Logo"/>
-    <h1>Winabler: Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce</h1>
+    <div class="header-title">Winabler: Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce</div>
   </div>
   <section class="hero">
     <h1>Ready to win at e-commerce?</h1>
@@ -93,6 +225,115 @@
       <button class="btn grey-btn">Book a Free Consultation</button>
     </div>
   </section>
-  <!-- Add additional sections as needed -->
+  <section class="trust-section">
+    <div class="logos">
+      <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Client Logo 1"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Client Logo 2"/>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg" alt="Client Logo 3"/>
+    </div>
+    <div class="testimonials">
+      <span>"Winabler helped us double our monthly sales—rock solid service!"</span>
+      <span>"Support queries resolved in minutes, not hours!"</span>
+    </div>
+    <div class="impact-stats">
+      <div> <span>150+</span> brands empowered </div>
+      <div> <span>99%</span> client satisfaction </div>
+      <div> <span>40+</span> languages supported </div>
+    </div>
+  </section>
+  <section class="packages-section">
+    <h2 style="text-align:center; color:#222;">Our Packages</h2>
+    <div class="package-list">
+      <div class="package">
+        <div class="package-title">Starter: Essential AI Enablement</div>
+        Accelerate your launch with rapid AI tools tailored for new and growing D2C brands.
+        <ul>
+          <li>AI chatbot deployment (web, WhatsApp, email)</li>
+          <li>Personalized product recommendations</li>
+          <li>Seamless integration and staff training</li>
+        </ul>
+      </div>
+      <div class="package">
+        <div class="package-title">Growth: Automated Engagement & Optimization</div>
+        Deeper automation with rapid issue resolution, smarter recommendations, inventory insights.
+        <ul>
+          <li>End-to-end support automation</li>
+          <li>Advanced recommendation engine</li>
+          <li>Inventory & demand forecasting</li>
+          <li>WhatsApp commerce integration</li>
+          <li>Abandoned cart recovery</li>
+        </ul>
+      </div>
+      <div class="package">
+        <div class="package-title">Enterprise: Digital Transformation & Decision Support</div>
+        Leadership-class AI for scaling D2C brands.
+        <ul>
+          <li>Predictive analytics & risk detection</li>
+          <li>Dynamic pricing optimization</li>
+          <li>Intelligent logistics & courier allocation</li>
+          <li>RTO reduction & address verification</li>
+          <li>Robust data privacy & API integration</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:20px;">
+      <button class="btn outline-btn">Compare Packages</button>
+    </div>
+  </section>
+  <section class="custom-section">
+    <h2 style="text-align:center; color:#222;">Prefer a Custom Solution?</h2>
+    <div>Mix and match AI services for your perfect fit. Get instant estimate & flexibility:</div>
+    <div class="custom-list">
+      <div class="custom-item">AI Chatbots (Web/WhatsApp/Email)</div>
+      <div class="custom-item">Personalized Recommendations</div>
+      <div class="custom-item">Advanced Recommendation Engine</div>
+      <div class="custom-item">Support Automation</div>
+      <div class="custom-item">Inventory Forecasting</div>
+      <div class="custom-item">WhatsApp Commerce</div>
+      <div class="custom-item">Abandoned Cart Recovery</div>
+      <div class="custom-item">Predictive Analytics</div>
+      <div class="custom-item">Dynamic Pricing</div>
+      <div class="custom-item">Intelligent Fulfillment</div>
+      <div class="custom-item">RTO Reduction</div>
+      <div class="custom-item">Data Privacy / Compliance</div>
+      <div class="custom-item">Tech/API Integration</div>
+      <div class="custom-item">Team Training</div>
+    </div>
+    <div style="text-align:center; margin-top:16px;">
+      <button class="btn winabler-btn">Get Instant Quote</button>
+      <button class="btn outline-btn">Book Consultation</button>
+    </div>
+  </section>
+  <section class="contact-section">
+    <h2 style="color:#222;">Let’s Accelerate Your Win!</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="text" placeholder="Company Name">
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number">
+      <input type="text" placeholder="Role/Position">
+      <select>
+        <option>Interested In...</option>
+        <option>Starter Package</option>
+        <option>Growth Package</option>
+        <option>Enterprise Package</option>
+        <option>Custom Package</option>
+      </select>
+      <textarea rows="3" placeholder="Additional Requirements"></textarea>
+      <button type="submit" class="btn winabler-btn">Schedule a Call</button>
+      <button type="submit" class="btn outline-btn">Request a Proposal</button>
+      <button type="button" class="btn grey-btn">WhatsApp Chat</button>
+    </form>
+    <div style="font-size:0.95rem; color:#888; margin-top:10px;">
+      Your privacy is protected. We never share your information. GDPR compliant.
+    </div>
+  </section>
+  <div class="footer">
+    About | Service Packages | Build Your Own | Contact | Privacy Policy | Terms & Conditions<br>
+    Social: LinkedIn | Twitter | Instagram<br>
+    GDPR Compliant • Made in India<br>
+    © 2025 Winabler. All rights reserved.
+  </div>
 </body>
 </html>
