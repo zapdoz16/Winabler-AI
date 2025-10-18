@@ -4,162 +4,231 @@
   <meta charset="UTF-8">
   <title>Winabler - AI-Powered WhatsApp Cart Recovery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Add favicon for brand toolbar/tab -->
+  <!-- Favicon (for tab and toolbar brand icon) -->
   <link rel="icon" type="image/png" href="Winabler-Logo-White-Rectangular.jpg">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
     :root {
       --logo-green: #d4e157;
       --logo-gray: #949494;
-      --winabler-dark: #242524;
       --winabler-orange: #ff7a36;
+      --winabler-dark: #242524;
       --glass-bg: rgba(255,255,255,0.85);
-      --section-border: 3px solid #d4e157;
       --faq-bg: #f7faff;
     }
     body {
-      margin: 0; font-family: 'Inter', Arial, sans-serif; background: linear-gradient(120deg, #fff 70%, #e8f5e9 100%);
-      color: var(--winabler-dark); min-height: 100vh;
+      margin: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(120deg, #fff 70%, #e8f5e9 100%);
+      color: var(--winabler-dark);
+      min-height: 100vh;
       -webkit-font-smoothing: antialiased;
     }
     .hero-logo {
-      display:flex; justify-content:center; align-items:center;
-      padding-top:44px; margin-bottom:18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 44px;
+      margin-bottom: 18px;
       animation: fadeInDown 0.8s;
     }
     .hero-logo img {
-      height:128px; width:auto; border-radius:24px; box-shadow:0 14px 88px #d4e15744;
+      height: 128px;
+      width: auto;
+      border-radius: 24px;
+      box-shadow: 0 14px 88px #d4e15744;
     }
-    .headline {
-      font-size:2.7rem; font-weight: 700;
-      color: var(--logo-green);
-      text-align:center; margin-bottom:10px; letter-spacing:.012em;
+    .page-gradient-title {
+      font-size: 2.7rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: .012em;
       text-shadow: 0 4px 24px #d4e15722;
+      background: linear-gradient(90deg, #949494 15%, #d4e157 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      transition: background .2s;
     }
-    .subheadline {
-      text-align:center; font-size:1.23rem; color:var(--logo-gray); margin-bottom:42px; font-weight:400;
-    }
-    .section {max-width:980px;margin:0 auto 48px auto;position:relative;}
-    .section-title {
-      font-size:1.9rem;
-      color: var(--logo-green);
-      font-weight:700;
-      text-align:center;
-      margin-bottom:18px;
-      letter-spacing:.01em;
-      position:relative;
-      padding-bottom:8px;
-      border-bottom:3px solid var(--logo-gray);
-      background:none;
+    .section-gradient-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 18px;
+      letter-spacing: .01em;
+      position: relative;
+      padding-bottom: 8px;
+      border-bottom: 3px solid #949494;
+      background: linear-gradient(90deg, #949494 15%, #d4e157 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
       text-shadow: 0 8px 32px #d4e15719;
-      transition: color .16s;
+      transition: background .16s;
     }
-    .section-title .icon {vertical-align:middle; font-size:1.6rem;}
+    .section {max-width: 980px; margin: 0 auto 48px auto; position: relative;}
     .problem-box, .comparison-box, .what-box, .results-box, .cta-box, .pricing-box, .social-proof-box {
-      background:var(--glass-bg); border-radius:22px; box-shadow:0 4px 44px #d4e15722; padding:34px 24px; margin-bottom:38px;
-      border-left:6px solid #d4e15722;
+      background: var(--glass-bg);
+      border-radius: 22px;
+      box-shadow: 0 4px 44px #d4e15722;
+      padding: 34px 24px;
+      margin-bottom: 38px;
+      border-left: 6px solid #d4e15722;
     }
-    .problem-box ul, .problem-box li, .what-box ul {text-align:left; color: var(--winabler-dark);}
-    .problem-box ul, .what-box ul {margin:14px 0 0 40px;}
+    .problem-box ul, .problem-box li, .what-box ul {text-align: left;}
+    .problem-box ul, .what-box ul {margin: 14px 0 0 40px;}
     .cta-btn {
-      background:var(--winabler-orange); color:#fff; font-weight:700; font-size:1.21rem; padding:16px 46px; border:none; border-radius:32px;
-      box-shadow:0 8px 40px #ff7a3661; cursor:pointer;
-      margin-top:18px;
-      margin-bottom:14px; text-decoration:none;
-      letter-spacing:.03em; display:inline-block; transition:background .19s,transform .16s;
+      background: var(--winabler-orange);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.21rem;
+      padding: 16px 46px;
+      border: none;
+      border-radius: 32px;
+      box-shadow: 0 8px 40px #ff7a3661;
+      cursor: pointer;
+      margin-top: 18px;
+      margin-bottom: 14px;
+      text-decoration: none;
+      letter-spacing: .03em;
+      display: inline-block;
+      transition: background .19s, transform .16s;
+      outline: none;
     }
-    .cta-btn:focus, .cta-btn:hover {background:#ff914d;transform:scale(1.05);}
-    .comparison-table {width:100%;border-collapse:collapse;}
-    .comparison-table th {
-      background:#f5f5f5;
-      color:var(--logo-green);
-      font-weight:700;font-size:1.11rem;text-align:center;padding:14px 8px;
-      border-bottom:2px solid #d4e157;
+    .cta-btn:focus, .cta-btn:hover {
+      background: #ff914d;
+      transform: scale(1.05);
     }
-    .comparison-table th, .comparison-table td {
-      padding:15px 8px; text-align:center; overflow-wrap:break-word; font-size:1.04rem;
-    }
-    .comparison-table td {background:#f8f8f9;}
-    .comparison-table tr td:first-child {background:#ededed;}
-    .comparison-table tr td:nth-child(2) {background:#eff7ee; font-weight:500;}
-    .comparison-table tr td:last-child {background:#fff;}
-    .comparison-table tr td .icon {margin-right:6px;}
-    .features-list {display:flex; flex-wrap:wrap; gap:32px; justify-content:center;}
-    .feature-glass {background:var(--glass-bg); border-radius:20px; box-shadow:0 4px 28px #d4e15735; padding:24px 14px;width:255px; text-align:center; margin-bottom:14px;}
-    .feature-step {font-size:1.14rem;margin-bottom:7px;}
-    .feature-icons {font-size:2.05rem;margin-bottom:10px;color:var(--logo-green);}
-    .what-box ul {margin-top:12px;}
-    .pricing-table {width:100%; margin:16px 0;}
-    .pricing-card {margin-bottom:20px;padding:20px 20px 14px 20px;background:#e7f7ee;border-radius:22px;box-shadow:0 2px 12px #d4e15720;}
-    .pricing-card .title {color:var(--winabler-orange);font-size:1.12rem;font-weight:bold;}
-    .pricing-card ul {margin-top:10px;text-align:left;}
-    .social-proof-box blockquote {margin:18px 0 6px 0;padding-left:12px;border-left:3px solid #d4e157;border-radius:6px;font-size:1.13rem;}
-    .results-box ul {list-style-type:circle;margin:12px 0 0 38px;font-size:1.01rem;}
-    /* ----- FAQ COLLAPSIBLE ----- */
-    .faq-box {background:var(--faq-bg);}
-    .faq-title {
-      font-size:1.7rem;display:block;color:var(--logo-green);font-weight:700;margin-bottom:18px;letter-spacing:.01em;
-    }
-    .faq-list {margin-top:8px;}
-    .faq-q {
-      cursor:pointer;font-weight:500;padding:13px 18px;background:#f3fdea;border-radius:14px;border:none;
-      font-size:1.09rem;width:100%;color:var(--logo-gray);margin-bottom:7px;
-      box-shadow:0 2px 8px #d4e15713;text-align:left;transition:background .15s;
-      position:relative;
-    }
-    .faq-q:focus, .faq-q.open, .faq-q:hover {background:#d4e15722;color: var(--logo-green);}
-    .faq-a {
-      max-height:0;overflow:hidden;background:var(--glass-bg);
-      border-radius:10px;color:#222;font-size:1.045rem;box-shadow:0 1px 7px #22bb6620;
-      margin:0 0 12px 0;padding:0 20px;transition: max-height 0.4s cubic-bezier(.4,0,.2,1),padding 0.4s cubic-bezier(.4,0,.2,1);
-    }
-    .faq-q.open + .faq-a {
-      max-height:240px;
-      padding:16px 20px;
-    }
-    .cta-box {text-align:center;}
-    .cta-box .icon {vertical-align:middle;margin-right:5px;}
-    .cta-box .whatsapp-num {font-size:1.15rem;font-weight:bold;color:var(--logo-green);}
-    .cta-box .lead-magnet {margin-top:13px;}
-    .footer {
-      background: linear-gradient(90deg, #f9fae1 70%, #d4e157 100%);
-      border-top:2.2px solid #e8f5e9;
-      padding: 26px 0; text-align:center; font-size:1.13rem;font-family:'Inter',Arial,sans-serif;color:var(--winabler-dark);
-      display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;
-    }
-    .footer img {height:40px;vertical-align:middle;margin-right:16px;border-radius:7px;box-shadow:0 2px 18px #d4e15733;}
-    .footer-email {display:flex;align-items:center;}
-    .footer-email svg {margin-right:6px;}
-    .footer-email-link {color:#222;text-decoration:underline;font-weight:600;}
-    .footer-email-link:hover{color:#ff7a36;}
-    /* FLOATING CTA BUTTON */
+    /* Floating CTA Button */
     .floating-cta {
       position: fixed;
-      right:30px; bottom: 36px;
+      bottom: 36px;
+      right: 36px;
       z-index: 998;
-      background:var(--winabler-orange);
-      color:#fff;
-      font-weight:700;
-      border-radius:32px;
-      padding:18px 42px;
-      font-size:1.12rem;
-      text-decoration:none;
-      box-shadow:0 8px 42px #ff7a3655;
-      transition:background 0.18s,transform 0.16s;
-      border:none;
-      letter-spacing:.01em;
-      outline:none;
-      display:none;
+      background: var(--winabler-orange);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 32px;
+      padding: 18px 48px;
+      font-size: 1.13rem;
+      box-shadow: 0 8px 42px #ff7a3633;
+      text-decoration: none;
+      transition: background .2s, transform .15s;
+      letter-spacing: .012em;
+      outline: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      visibility: visible;
     }
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
       .floating-cta {
-        right:50%;
-        transform:translateX(50%);
-        left:auto;
+        bottom: 12px; right: 10px; left: auto; padding: 13px 20px;
+        font-size: 1.02rem;
       }
     }
-    .floating-cta:hover,.floating-cta:focus {background:#ff914d;transform:scale(1.04);}
-    @media (min-width: 701px) {.floating-cta {display:block;}}
+    .floating-cta:hover, .floating-cta:focus {
+      background: #ff914d;
+      transform: scale(1.08);
+    }
+    .comparison-table {width: 100%; border-collapse: collapse;}
+    .comparison-table th {
+      background: #f5f5f5;
+      color: var(--logo-green);
+      font-weight: 700;
+      font-size: 1.11rem;
+      text-align: center;
+      padding: 14px 8px;
+      border-bottom: 2px solid #d4e157;
+    }
+    .comparison-table th, .comparison-table td {
+      padding: 15px 8px;
+      text-align: center;
+      overflow-wrap: break-word;
+      font-size: 1.04rem;
+    }
+    .comparison-table td {background: #f8f8f9;}
+    .comparison-table tr td:first-child {background: #ededed;}
+    .comparison-table tr td:nth-child(2) {background: #eff7ee; font-weight: 500;}
+    .comparison-table tr td:last-child {background: #fff;}
+    .features-list {display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;}
+    .feature-glass {background: var(--glass-bg); border-radius: 20px; box-shadow: 0 4px 28px #d4e15735;
+      padding: 24px 14px; width: 255px; text-align: center; margin-bottom: 14px;}
+    .feature-step {font-size: 1.14rem; margin-bottom: 7px;}
+    .feature-icons {font-size: 2.05rem; margin-bottom: 10px; color: var(--logo-green);}
+    .what-box ul {margin-top: 12px;}
+    .pricing-table {width: 100%; margin: 16px 0;}
+    .pricing-card {margin-bottom: 20px; padding: 20px 20px 14px 20px; background: #e7f7ee;
+      border-radius: 22px; box-shadow: 0 2px 12px #d4e15720;}
+    .pricing-card .title {color: var(--winabler-orange); font-size: 1.12rem; font-weight: bold;}
+    .pricing-card ul {margin-top: 10px; text-align: left;}
+    .social-proof-box blockquote {margin: 18px 0 6px 0; padding-left: 12px; border-left: 3px solid #d4e157;
+      border-radius: 6px; font-size: 1.13rem;}
+    .results-box ul {list-style-type: circle; margin: 12px 0 0 38px; font-size: 1.01rem;}
+    /* ----- FAQ COLLAPSIBLE ----- */
+    .faq-box {background: var(--faq-bg);}
+    .faq-title {
+      font-size: 1.7rem; display: block; font-weight: 700; margin-bottom: 18px; letter-spacing: .01em;
+      background: linear-gradient(90deg, #949494 15%, #d4e157 85%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    .faq-list {margin-top: 8px;}
+    .faq-q {
+      cursor: pointer; font-weight: 500; padding: 13px 18px;
+      background: #f3fdea; border-radius: 14px; border: none;
+      font-size: 1.09rem; width: 100%; color: #949494; margin-bottom: 7px;
+      box-shadow: 0 2px 8px #d4e15713; text-align: left; transition: background .15s;
+      position: relative; outline:none;
+    }
+    .faq-q:focus, .faq-q.open, .faq-q:hover {background: #d4e15722; color: var(--logo-green);}
+    .faq-a {
+      max-height: 0; overflow: hidden; background: var(--glass-bg);
+      border-radius: 10px; color: #222; font-size: 1.045rem; box-shadow: 0 1px 7px #22bb6620;
+      margin: 0 0 12px 0; padding: 0 20px; transition: max-height 0.4s cubic-bezier(.4,0,.2,1), padding 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .faq-q.open + .faq-a {
+      max-height: 240px;
+      padding: 16px 20px;
+    }
+    .cta-box {text-align: center;}
+    .cta-box .icon {vertical-align: middle; margin-right: 5px;}
+    .cta-box .whatsapp-num {font-size: 1.15rem; font-weight: bold; color: var(--logo-green);}
+    .footer {
+      background: linear-gradient(90deg, #f9fae1 70%, #d4e157 100%);
+      border-top: 2.2px solid #e8f5e9;
+      padding: 26px 0;
+      text-align: center;
+      font-size: 1.13rem;
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--winabler-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .footer img {height: 40px; vertical-align: middle; margin-right: 16px; border-radius: 7px; box-shadow: 0 2px 18px #d4e15733;}
+    .footer-email {display: flex; align-items: center;}
+    .footer-email svg {margin-right: 6px;}
+    .footer-email-link {color: #222; text-decoration: underline; font-weight: 600;}
+    .footer-email-link:hover {color: #ff7a36;}
+    @media (max-width: 860px) {
+      .hero-logo img {height: 82px;}
+      .page-gradient-title, .section-gradient-title, .faq-title {font-size: 1.16rem;}
+      .feature-glass {width: 90vw; max-width: 320px;}
+      .features-list {gap: 13px;}
+      .section {padding: 0;}
+      .problem-box, .comparison-box, .what-box, .results-box, .cta-box, .pricing-box, .social-proof-box {padding: 14px 7px;}
+      .footer {font-size: 1rem;}
+      .floating-cta {padding: 10px 13px;font-size:.96rem;bottom:8px;}
+    }
     @keyframes fadeInDown{0%{opacity:0;transform:translateY(-40px);}100%{opacity:1;transform:translateY(0);}}
     @keyframes fadeInUp{0%{opacity:0;transform:translateY(42px);}100%{opacity:1;transform:translateY(0);}}
   </style>
@@ -168,12 +237,12 @@
   <div class="hero-logo">
     <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
   </div>
-  <div class="headline">Winabler: AI-Powered, Humanized Cart Recovery on WhatsApp</div>
+  <div class="page-gradient-title">Winabler: AI-Powered, Humanized Cart Recovery on WhatsApp</div>
   <div class="subheadline">
     Abandoned carts? Unlock lost sales with AI chats crafted in your brand’s voice—real connections, zero tech headaches.
   </div>
   <div class="section problem-box">
-    <div class="section-title"><span class="icon">💡</span> The Hidden Cost of Abandoned Carts</div>
+    <div class="section-gradient-title">💡 The Hidden Cost of Abandoned Carts</div>
     <ul>
       <li><strong>₹8-12L</strong> in lost revenue (for brands doing 500+ orders/month)</li>
       <li><strong>Customers</strong> lost to competitors</li>
@@ -188,7 +257,7 @@
     <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
   </div>
   <div class="section what-box">
-    <div class="section-title"><span class="icon">✨</span> What's Included</div>
+    <div class="section-gradient-title">✨ What's Included</div>
     <ul>
       <li><strong>Custom Brand Voice Analysis</strong> – messages sound exactly like you</li>
       <li><strong>WhatsApp Automation Setup</strong> – Shopify integration, testing handled</li>
@@ -199,7 +268,7 @@
     </ul>
   </div>
   <div class="section comparison-box">
-    <div class="section-title"><span class="icon">★</span> What Makes <span style="color:#d4e157;">Winabler</span> <span style="color:#949494;">Different</span></div>
+    <div class="section-gradient-title">★ What Makes Winabler Different</div>
     <table class="comparison-table">
       <tr>
         <th>What Matters Most</th>
@@ -207,39 +276,39 @@
         <th>Other Tools</th>
       </tr>
       <tr>
-        <td><span class="icon">🎤</span> Sounds Like Your Brand</td>
+        <td>🎤 Sounds Like Your Brand</td>
         <td>Messages crafted in <strong>your voice</strong>—feels personal</td>
         <td>Generic templates, robotic automation</td>
       </tr>
       <tr>
-        <td><span class="icon">📱</span> WhatsApp-First</td>
+        <td>📱 WhatsApp-First</td>
         <td>Built for India—<strong>90% open rates</strong>, native WhatsApp experience</td>
         <td>Email-first tools, WhatsApp is an afterthought</td>
       </tr>
       <tr>
-        <td><span class="icon">⚡</span> Setup Time</td>
+        <td>⚡ Setup Time</td>
         <td>Live in <strong>48 hours</strong> (done-for-you)</td>
         <td>2-3 weeks DIY setup</td>
       </tr>
       <tr>
-        <td><span class="icon">🎯</span> Personalization</td>
+        <td>🎯 Personalization</td>
         <td>Dynamic messages: product, cart value, customer type</td>
         <td>Same message for everyone</td>
       </tr>
       <tr>
-        <td><span class="icon">📈</span> Results You See</td>
+        <td>📈 Results You See</td>
         <td><strong>25-30% recovery</strong> rate, transparent dashboard</td>
         <td>8-12% with vague reporting</td>
       </tr>
       <tr>
-        <td><span class="icon">💳</span> Pricing</td>
+        <td>💳 Pricing</td>
         <td>Pay only for results (performance-based)</td>
         <td>Fixed fee regardless of outcome</td>
       </tr>
     </table>
   </div>
   <div class="section section-features">
-    <div class="section-title"><span class="icon">🚀</span> How Winabler Works <span style="color:#949494;">—The Simple Version</span></div>
+    <div class="section-gradient-title">🚀 How Winabler Works—The Simple Version</div>
     <div class="features-list">
       <div class="feature-glass">
         <div class="feature-icons">🧑‍💼</div>
@@ -280,7 +349,7 @@
     </div>
   </div>
   <div class="section pricing-box">
-    <div class="section-title"><span class="icon">💰</span> Choose Your Plan</div>
+    <div class="section-gradient-title">💰 Choose Your Plan</div>
     <div class="pricing-card">
       <div class="title">🏆 Most Popular: Performance-Based</div>
       <div>₹25,000 setup + <strong>8% of recovered sales</strong></div>
@@ -290,7 +359,7 @@
         <li>Full setup, tracking, optimization</li>
       </ul>
       <div style="margin-top:8px;"><em>Example:</em> Recover ₹8L in 6 months, pay ₹25K + ₹64K = ₹89K, net ₹7.11L.</div>
-      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book a Free Consultation</a>
+      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
     </div>
     <div class="pricing-card">
       <div class="title">⭐ Premium: White-Glove Service</div>
@@ -300,12 +369,12 @@
         <li>Priority support & bi-weekly strategy</li>
         <li>Seasonal campaigns, advanced features</li>
       </ul>
-      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book a Free Consultation</a>
+      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
     </div>
     <div style="margin-top:8px;text-align:center;">Not sure? <strong>Book a free consult</strong> and we'll recommend what's best.</div>
   </div>
   <div class="section social-proof-box">
-    <div class="section-title"><span class="icon">🌟</span> What D2C Founders Say</div>
+    <div class="section-gradient-title">🌟 What D2C Founders Say</div>
     <blockquote>
       “We were losing ₹12L monthly to abandoned carts. Winabler helped us recover 28% – that's ₹3.36L back every month. Messages sound like our brand, customers love it.”
     </blockquote>
@@ -320,7 +389,7 @@
     <div style="font-size:.97rem;color:#949494;">— Priya K., Founder, Bloom Beauty (Skincare)</div>
   </div>
   <div class="section results-box">
-    <div class="section-title"><span class="icon">📈</span> The Numbers Don't Lie</div>
+    <div class="section-gradient-title">📈 The Numbers Don't Lie</div>
     <ul>
       <li>26.3% <strong>average recovery rate</strong> (vs 8-10% with email)</li>
       <li>₹4-6L <strong>recovered per month</strong> (for 500-700 orders/month)</li>
@@ -359,10 +428,10 @@
     </div>
   </div>
   <div class="section cta-box">
-    <div class="section-title"><span class="icon">🚀</span> Ready to Stop Losing ₹5-10L Monthly?</div>
+    <div class="section-gradient-title">🚀 Ready to Stop Losing ₹5-10L Monthly?</div>
     <div style="margin:13px 0;">
       <span style="font-weight:600;">Here’s what happens next:</span>
-      <br>1️⃣ Book Your Free 30-Minute Consult (15 min): We analyze your abandoned cart data and show you exactly what you’re losing.
+      <br>1️⃣ Book Your Free 30-Minute Consult: We analyze your abandoned cart data and show you exactly what you’re losing.
       <br>2️⃣ Personalized recovery plan. <br>3️⃣ Choose your plan.<br>4️⃣ Go live in 48 hours—watch recovered orders roll in.
     </div>
     <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
@@ -371,10 +440,6 @@
         <svg width="23" height="23" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/>
       </span>
       WhatsApp us directly: <span class="whatsapp-num">+91-8467861616</span>
-    </div>
-    <div class="lead-magnet">
-      <strong>Still thinking?</strong> <br>
-      Download our free guide: <em>"The 5 WhatsApp Messages That Recover 30% of Abandoned Carts"</em>
     </div>
   </div>
   <footer class="footer">
@@ -389,7 +454,9 @@
       <a href="mailto:contact@winabler.in" class="footer-email-link">contact@winabler.in</a>
     </span>
   </footer>
-  <a href="https://calendly.com/contact-winabler" target="_blank" class="floating-cta">Book Your Free 30-Minute Consult</a>
+  <a href="https://calendly.com/contact-winabler" target="_blank" class="floating-cta">
+    Book Your Free 30-Minute Consult
+  </a>
   <script>
     // FAQ accordion fix (multiple can be open, click closes others)
     document.querySelectorAll('.faq-q').forEach(function(btn) {
@@ -398,6 +465,20 @@
         btn.classList.toggle('open');
       });
     });
+    // Sticky floating CTA visibility fix
+    function updateFloatingCTA() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var windowH = window.innerHeight;
+      var cta = document.querySelector('.floating-cta');
+      if (cta) {
+        cta.style.visibility = 'visible';
+        cta.style.opacity = '1';
+      }
+    }
+    window.addEventListener('scroll', updateFloatingCTA);
+    window.addEventListener('resize', updateFloatingCTA);
+    // Always show CTA
+    document.addEventListener('DOMContentLoaded', updateFloatingCTA);
   </script>
 </body>
 </html>
