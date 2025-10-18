@@ -24,60 +24,78 @@
       min-height: 100vh;
       scroll-behavior: smooth;
     }
+    /* Navigation Bar */
     .navbar {
-      position: fixed; top: 0; left: 0; width: 100%; height: 68px;
-      background: var(--nav-bg);
-      box-shadow: 0 2px 18px #d4e15726;
+      position: fixed; top: 0; left: 0; width: 100%; height: 120px;
+      background: var(--nav-bg); box-shadow: 0 4px 28px #d4e15726;
       display: flex; align-items: center; justify-content: center;
       z-index: 99; backdrop-filter: blur(10px);
     }
     .navbar img {
-      height: 48px; border-radius: 12px;
-      box-shadow: 0 2px 18px #d4e15725; margin-right: 12px;
+      height: 92px; width: auto; border-radius: 18px;
+      box-shadow: 0 6px 32px #d4e15733; margin-right: 18px;
     }
     .navbar-title {
-      font-size: 1.12rem; font-weight: bold; color: var(--winabler-green);
-      letter-spacing: .03em; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-size: 1.30rem; font-weight: bold; color: var(--winabler-green);
+      letter-spacing: .04em; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
-    .page-wrap {position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 90px 18px 0 18px;}
+    .page-wrap {position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 140px 18px 0 18px;}
+    /* Hero logo */
+    .hero-logo {
+      display: flex; justify-content: center; align-items: center;
+      margin-bottom: 20px; margin-top: 4px;
+    }
+    .hero-logo img {
+      height: 140px; width: auto; border-radius: 32px;
+      box-shadow: 0 18px 88px #d4e15744, 0 2px 32px #d4e15718;
+      display: block; margin: 0 auto;
+      transition: box-shadow .18s;
+    }
+    .hero-logo img:hover {
+      box-shadow: 0 28px 128px #d4e15788, 0 6px 42px #d4e15744;
+    }
     .hero-section {text-align: center; padding: 74px 8vw 74px 8vw; position: relative;}
     .hero-glass {
       display: inline-block; background: var(--glass-bg); border-radius: 44px;
-      box-shadow: 0 10px 80px #d4e15733, 0 2.5px 70px #d4e15714;
-      padding: 58px 40px; backdrop-filter: blur(19px); transition: box-shadow 0.21s;
+      box-shadow: 0 12px 90px #d4e15733, 0 2.5px 70px #d4e15714;
+      padding: 82px 44px 66px; backdrop-filter: blur(22px); transition: box-shadow 0.21s;
       animation: fadeIn .9s .25s backwards;
     }
-    .hero-glass:hover {box-shadow: 0 18px 120px #d4e15755;}
+    .hero-glass:hover {box-shadow: 0 18px 120px #d4e15777;}
     .hero-headline {
-      font-size: 3.35rem; font-weight: 700; color: var(--winabler-green);
-      line-height: 1.07; letter-spacing: 0.02em; margin-bottom: 10px;
+      font-size: 3.6rem; font-weight: 700; color: var(--winabler-green);
+      line-height: 1.07; letter-spacing: 0.02em; margin-bottom: 16px;
       animation: textGlow 1.2s forwards;
     }
-    @keyframes textGlow {0%{text-shadow:none;}60%{text-shadow:0 0 40px #d4e15744;}100%{text-shadow:0 0 12px #d4e15744;}}
-    .hero-sub {font-size: 1.35rem; color: var(--winabler-gray); font-weight: 600; margin: 22px 0 34px 0;}
-    .hero-stat {font-size: 1.62rem; color: var(--winabler-green); font-weight: bold;
+    .hero-headline strong {font-weight:bold;}
+    @keyframes textGlow {0%{text-shadow:none;}60%{text-shadow:0 0 40px #d4e15744;}100%{text-shadow:0 0 14px #d4e15744;}}
+    .hero-sub {font-size: 1.48rem; color: var(--winabler-gray); font-weight: 600; margin: 22px 0 34px 0;}
+    .hero-stat {font-size: 1.72rem; color: var(--winabler-green); font-weight: bold;
       background: linear-gradient(90deg,#e8f5e9 8%, #d4e15725 120%);
-      border-radius: 18px; padding: 10px 0; margin-bottom: 10px;
+      border-radius: 18px; padding: 16px 0; margin-bottom: 12px;
       box-shadow: 0 0 38px #d4e15744; display: inline-block;
       animation: fadeInUp 1.1s .2s backwards;
     }
     .hero-cta {
       background: var(--winabler-gradient); color: #1e3200; font-weight: 700;
-      font-size: 1.15rem; padding: 22px 64px; border-radius: 38px; text-decoration: none;
-      display: inline-block; margin-top: 34px; box-shadow: 0 4px 32px #d4e15777;
+      font-size: 1.24rem; padding: 24px 74px; border-radius: 38px; text-decoration: none;
+      display: inline-block; margin-top: 37px; box-shadow: 0 8px 42px #d4e15777;
       transition: box-shadow .18s, transform .18s, background .28s; letter-spacing: 0.05em;
       cursor: pointer; animation: bounceBtn 1.1s .95s backwards; border: none;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     }
     @keyframes bounceBtn {0%{transform:scale(.85);}100%{transform:scale(1);}}
     .hero-cta:focus, .hero-cta:hover {
-      box-shadow: 0 14px 74px #d4e157cc;
+      box-shadow: 0 18px 74px #d4e157cc;
       background: linear-gradient(120deg,#e8f5e9 24%, #d4e157 83%);
       color: #172c00; outline: 2px solid #d4e157; transform: scale(1.06);
     }
     .contact-email-hero {
-      margin-top:21px;font-size:1.09rem;
-      background: #d4e15713; border-radius:12px; padding:8px 0; display:inline-block;
+      margin-top:24px;font-size:1.18rem;
+      background: #d4e15713; border-radius:18px; padding:12px 0; display:inline-block;
+      font-weight: 600;
     }
+    .contact-email-hero svg {vertical-align:middle; margin-right:6px;}
     .contact-email-hero a {
       color:#222; text-decoration:underline; font-weight:bold;
       padding-left:6px;
@@ -85,106 +103,113 @@
     }
     .contact-email-hero a:hover {color:#d4e157;}
     .wavy-divider {
-      height: 42px; width:100%; background: none; margin:0 0 -22px 0;
+      height: 46px; width:100%; background: none; margin:0 0 -22px 0;
       display: block;
     }
-    .section-title { text-align: center; font-size: 1.39rem; color: var(--winabler-green); font-weight: 700; margin: 92px 0 26px 0; animation: fadeInDown .9s .32s backwards;}
-    .compare-glass {margin: 0 auto 38px auto; box-shadow: 0 6px 62px #d4e15722; border-radius: 18px; background: var(--glass-bg); backdrop-filter: blur(7px); animation: fadeIn 1.3s .55s backwards; max-width: 770px; overflow-x: auto;}
+    .section-title { text-align: center; font-size: 1.43rem; color: var(--winabler-green); font-weight: 700; margin: 92px 0 26px 0; animation: fadeInDown .9s .32s backwards;}
+    .compare-glass {margin: 0 auto 46px auto; box-shadow: 0 6px 64px #d4e15722; border-radius: 20px; background: var(--glass-bg); backdrop-filter: blur(11px); animation: fadeIn 1.3s .55s backwards; max-width: 770px; overflow-x: auto;}
     table.compare-table {width: 100%; border-collapse: separate; border-spacing: 0;}
     table.compare-table th, table.compare-table td {
-      padding: 18px 14px; font-size: 1.16rem; border-bottom: 1px solid #eee;
+      padding: 22px 16px; font-size: 1.23rem; border-bottom: 1px solid #eee;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: transparent; transition: background .19s;
     }
     table.compare-table th {
       background: linear-gradient(90deg,#e8f5e9 68%, #d4e15711 100%);
-      color: var(--winabler-green); font-weight: 700; border-bottom: 2px solid var(--winabler-green); text-align: center; letter-spacing: .02em; font-size: 1.19rem;
+      color: var(--winabler-green); font-weight: 700; border-bottom: 2px solid var(--winabler-green); text-align: center; letter-spacing: .02em; font-size: 1.21rem;
     }
-    table.compare-table td { color: var(--winabler-dark); text-align: center;}
+    table.compare-table td { color: var(--winabler-dark); text-align: center; }
+    table.compare-table strong {font-weight:bold;}
+    table.compare-table em {font-style:italic;}
     table.compare-table tr:hover td {background: #d4e15712;}
     table.compare-table tr:last-child td {border-bottom: none;}
-    .features-row {display: flex; flex-wrap: wrap; justify-content: center; gap: 34px; margin-bottom: 88px; animation: fadeIn 1.1s 1.1s backwards;}
+    .features-row {display: flex; flex-wrap: wrap; justify-content: center; gap: 38px; margin-bottom: 88px; animation: fadeIn 1.1s 1.1s backwards;}
     .feature-glass {
-      background: var(--glass-bg); border-radius: 22px; box-shadow: 0 8px 54px #d4e15722;
-      padding: 38px 22px 34px 22px; width: 235px; text-align: center; transition: transform .16s, box-shadow .16s, background .19s; backdrop-filter: blur(12px); position: relative; animation: fadeInUp .9s forwards;
+      background: var(--glass-bg); border-radius: 24px; box-shadow: 0 8px 54px #d4e15722;
+      padding: 52px 28px; width: 260px; text-align: center; transition: transform .16s, box-shadow .16s, background .19s; backdrop-filter: blur(14px); position: relative; animation: fadeInUp .9s forwards;
     }
-    .feature-glass:focus, .feature-glass:hover {background: #d4e15712; transform: translateY(-8px) scale(1.09); box-shadow: 0 18px 88px #d4e15755; outline: 2px solid #d4e15755;}
+    .feature-glass:focus, .feature-glass:hover {background: #d4e15712; transform: translateY(-8px) scale(1.11); box-shadow: 0 18px 100px #d4e15777; outline: 2px solid #d4e15777;}
     .feature-icon {
-      margin-bottom: 14px; height: 49px; width: 49px; display: flex; align-items: center; justify-content: center;
-      margin-left: auto; margin-right: auto; animation: iconPop .8s backwards; border-radius: 9px; box-shadow: 0 4px 18px #d4e15755;
+      margin-bottom: 16px; height: 56px; width: 56px; display: flex; align-items: center; justify-content: center;
+      margin-left: auto; margin-right: auto; animation: iconPop .8s backwards; border-radius: 9px; box-shadow: 0 4px 21px #d4e15766;
       background: linear-gradient(65deg,#e8f5e9 0%, #d4e157 60%);
     }
     @keyframes iconPop {0%{transform: scale(0);}80%{transform: scale(1.18);}100%{transform: scale(1);}}
-    .feature-title {font-weight: bold; font-size: 1.13rem; color: var(--winabler-green); margin-bottom: 7px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
-    .feature-desc {font-size: 1.06rem; color: var(--winabler-gray);}
+    .feature-title {font-weight: bold; font-size: 1.19rem; color: var(--winabler-green); margin-bottom: 10px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;}
+    .feature-desc {font-size: 1.11rem; color: var(--winabler-gray);}
+    .feature-title strong {font-weight:bold;}
+    .feature-desc em {font-style:italic;}
     .mentor-block {
       background: var(--glass-bg); border-radius: 2.6rem; margin: 0 auto 72px auto;
-      padding: 42px 30px 36px 30px; max-width: 555px; box-shadow: 0 7px 62px #d4e15718; backdrop-filter: blur(7px); text-align: center;
-      font-size: 1.32rem; color: var(--winabler-dark); line-height: 1.5; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+      padding: 46px 32px; max-width: 575px; box-shadow: 0 7px 62px #d4e15718; backdrop-filter: blur(8px); text-align: center;
+      font-size: 1.35rem; color: var(--winabler-dark); line-height: 1.5; font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
       animation: fadeInUp 1s 1.2s backwards; transition: box-shadow .21s;
     }
-    .mentor-block:hover {box-shadow: 0 12px 90px #d4e15744;}
+    .mentor-block strong {font-weight:bold;}
+    .mentor-block em {font-style:italic;}
+    .mentor-block:hover {box-shadow: 0 12px 100px #d4e15748;}
     .footer {
-      background: var(--winabler-gradient); border-top: 2.2px solid #e8f5e9; padding: 26px 0;
-      text-align: center; font-size: 1.07rem; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--winabler-dark);
-      display: flex; align-items: center; justify-content: center; gap: 14px;
-      animation: fadeInUp 1s 1.2s backwards;
-      flex-wrap: wrap;
+      background: var(--winabler-gradient); border-top: 2.2px solid #e8f5e9; padding: 28px 0;
+      text-align: center; font-size: 1.18rem; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; color: var(--winabler-dark);
+      display: flex; align-items: center; justify-content: center; gap: 14px; animation: fadeInUp 1s 1.2s backwards; flex-wrap: wrap;
     }
-    .footer img {
-      height:32px; vertical-align:middle; margin-right:10px; border-radius: 7px; box-shadow: 0 2px 18px #d4e15733;
-    }
-    .footer-email {
-      margin-left: 12px;
-      font-weight: bold;
-    }
+    .footer img {height:40px; vertical-align:middle; margin-right:18px; border-radius: 7px; box-shadow: 0 2px 18px #d4e15733;}
+    .footer-email {display: flex; align-items: center; margin-left: 18px;}
+    .footer-email svg {margin-right: 8px;}
     .footer-email-link {
-      color:#222; text-decoration:underline; font-weight:bold; padding-left:6px;transition: color 0.18s;
+      color:#222; text-decoration:underline; font-weight:bold; padding-left:4px;transition: color 0.18s;
     }
     .footer-email-link:hover{color:#d4e157;}
     @media (max-width: 980px) {
-      .hero-section {padding: 60px 3vw 60px 3vw;}
-      .hero-glass {padding: 32px 3vw;}
-      .features-row {gap: 18px;}
-      .feature-glass {width: 95vw; max-width: 360px;}
-      .mentor-block {padding: 20px 5vw;}
-      .section-title {font-size:1.08rem;}
-      .footer {font-size:.97rem;}
-      .logo img, .navbar img {height:36px;}
-      .navbar {height: 52px;}
-      .page-wrap {padding: 53px 2vw 0 2vw;}
-      .footer-email {margin-left: 0; margin-top: 5px;}
+      .navbar {height: 74px;}
+      .navbar img {height:57px;}
+      .hero-logo img {height: 82px;}
+      .hero-glass {padding: 33px 2vw;}
+      .features-row {gap: 25px;}
+      .feature-glass {width: 99vw; max-width: 370px;}
+      .mentor-block {padding: 16px 5vw;}
+      .section-title {font-size:1.12rem;}
+      .footer {font-size:1rem;}
+      .footer-email {margin-left: 0; margin-top: 8px;}
     }
     @keyframes fadeInDown{0%{opacity:0;transform:translateY(-40px);}100%{opacity:1;transform:translateY(0);}}
-    @keyframes fadeInUp{0%{opacity:0;transform:translateY(42px);}100%{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInUp{0%{opacity:0;transform:translateY(48px);}100%{opacity:1;transform:translateY(0);}}
     @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
   </style>
 </head>
 <body>
   <div class="navbar">
     <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
-    <span class="navbar-title">Enabling Your Win</span>
+    <span class="navbar-title"><strong>Enabling Your Win</strong></span>
   </div>
   <div class="page-wrap">
+    <!-- Hero logo -->
+    <div class="hero-logo">
+      <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo Large">
+    </div>
     <!-- Hero Section -->
     <section class="hero-section">
       <div class="hero-glass" tabindex="0">
-        <div class="hero-headline">Winabler: AI-Powered, Humanized Cart Recovery on WhatsApp</div>
+        <div class="hero-headline"><strong>Winabler: AI-Powered, Humanized Cart Recovery on WhatsApp</strong></div>
         <div class="hero-sub">
-          Abandoned carts? Unlock lost sales with AI chats crafted in your brand’s voice—real connections, zero tech headaches.
+          <strong>Abandoned carts?</strong> <em>Unlock lost sales</em> with AI chats crafted in <strong>your brand’s voice</strong>—real connections, zero tech headaches.
         </div>
         <div class="hero-stat">
-          Indian D2C brands lose up to <b>70% of potential sales every month</b> to abandoned carts.
+          <strong>Indian D2C brands lose up to 70% of potential sales every month to abandoned carts.</strong>
         </div>
-        <div style="margin-bottom:7px;">
-          Imagine picking up even <b>25%</b> of those lost orders—how far could your brand go?<br>
-          Meet Winabler—your friendly growth mentor with a dash of AI wizardry.<br>
-          We help bring those carts home, through WhatsApp conversations that sound just like you.
+        <div style="margin-bottom:11px;">
+          <em>Imagine picking up even 25% of those lost orders</em>—how far could your brand go?<br>
+          Meet Winabler—<strong>your friendly growth mentor</strong> with a dash of AI wizardry.<br>
+          <strong>We help bring those carts home, through WhatsApp conversations that sound just like you.</strong>
         </div>
         <a class="hero-cta" rel="noopener noreferrer" href="https://calendly.com/contact-winabler" target="_blank">
-          Book Your Free 30-Minute Consult
+          <strong>Book Your Free 30-Minute Consult</strong>
         </a>
         <div class="contact-email-hero">
-          <b>Or email us:</b>
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" style="vertical-align:middle;margin-bottom:2px;">
+            <rect width="24" height="24" rx="5" fill="#d4e157"/>
+            <path d="M5 7l7 5 7-5" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M5 7v10h14V7" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
           <a href="mailto:contact@winabler.in" class="footer-email-link">contact@winabler.in</a>
         </div>
       </div>
@@ -193,7 +218,7 @@
       <path d="M0 70 Q 480 20 960 70 Q 1440 120 1920 70 V90 H0 Z" fill="#e8f5e9"/>
     </svg>
     <!-- Comparison glass table -->
-    <div class="section-title">Why Winabler? See The Difference In Seconds</div>
+    <div class="section-title">Why Winabler? <strong>See The Difference In Seconds</strong></div>
     <div class="compare-glass">
       <table class="compare-table">
         <thead>
@@ -205,28 +230,28 @@
         </thead>
         <tbody>
           <tr>
-            <td>Real brand voice</td>
-            <td>Chats that feel 100% you</td>
+            <td><strong>Real brand voice</strong></td>
+            <td><em>Chats that feel 100% you</em></td>
             <td>Generic, one-size-fits-all flows</td>
           </tr>
           <tr>
-            <td>Human touch</td>
-            <td>Warm, personal conversations</td>
+            <td><strong>Human touch</strong></td>
+            <td><em>Warm, personal conversations</em></td>
             <td>Robotic or scripted replies</td>
           </tr>
           <tr>
-            <td>Setup</td>
+            <td><strong>Setup</strong></td>
             <td>Effortless, no tech hassle</td>
             <td>Complicated, often needs support</td>
           </tr>
           <tr>
-            <td>Smart adaptation</td>
+            <td><strong>Smart adaptation</strong></td>
             <td>Learns & improves with every chat</td>
             <td>Stays the same, rarely adapts</td>
           </tr>
           <tr>
-            <td>Results</td>
-            <td>Builds loyalty—recovers more sales</td>
+            <td><strong>Results</strong></td>
+            <td><em>Builds loyalty—recovers more sales</em></td>
             <td>Just reminders, fewer sales</td>
           </tr>
         </tbody>
@@ -241,15 +266,18 @@
       <div class="feature-glass" tabindex="0">
         <div class="feature-icon">
           <!-- Official WhatsApp Logo SVG -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#25D366"/>
+            <path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/>
+          </svg>
         </div>
-        <div class="feature-title">WhatsApp-First</div>
-        <div class="feature-desc">90% open rates, where your customers are.</div>
+        <div class="feature-title"><strong>WhatsApp-First</strong></div>
+        <div class="feature-desc"><em>90% open rates, where your customers are.</em></div>
       </div>
       <div class="feature-glass" tabindex="0">
         <div class="feature-icon">
           <!-- Palette SVG -->
-          <svg width="42" height="42" viewBox="0 0 38 38" fill="none">
+          <svg width="52" height="52" viewBox="0 0 38 38" fill="none">
             <ellipse cx="19" cy="21" rx="16" ry="12" fill="#d4e157" opacity="0.6"/>
             <circle cx="13" cy="17" r="2" fill="#949494"/>
             <circle cx="19" cy="11" r="2.5" fill="#949494"/>
@@ -257,23 +285,23 @@
             <circle cx="19" cy="27" r="2" fill="#949494"/>
           </svg>
         </div>
-        <div class="feature-title">Your Brand’s Voice</div>
-        <div class="feature-desc">Every message sounds exactly like you.</div>
+        <div class="feature-title"><strong>Your Brand’s Voice</strong></div>
+        <div class="feature-desc"><em>Every message sounds exactly like you.</em></div>
       </div>
       <div class="feature-glass" tabindex="0">
         <div class="feature-icon">
           <!-- Flash SVG -->
-          <svg width="42" height="42" viewBox="0 0 38 38" fill="none">
+          <svg width="52" height="52" viewBox="0 0 38 38" fill="none">
             <polygon points="14,5 32,19 23,21 25,33 6,19 13,18" fill="#d4e157" stroke="#949494" stroke-width="1"/>
           </svg>
         </div>
-        <div class="feature-title">Effortless Setup</div>
-        <div class="feature-desc">No coding, no tech learning curve.</div>
+        <div class="feature-title"><strong>Effortless Setup</strong></div>
+        <div class="feature-desc"><em>No coding, no tech learning curve.</em></div>
       </div>
       <div class="feature-glass" tabindex="0">
         <div class="feature-icon">
           <!-- Analytics SVG -->
-          <svg width="42" height="42" viewBox="0 0 38 38" fill="none">
+          <svg width="52" height="52" viewBox="0 0 38 38" fill="none">
             <rect x="7" y="20" width="4" height="8" fill="#949494"/>
             <rect x="15" y="15" width="4" height="13" fill="#d4e157"/>
             <rect x="23" y="10" width="4" height="18" fill="#949494"/>
@@ -281,36 +309,40 @@
             <rect x="31" y="10" width="4" height="10" fill="#d4e157"/>
           </svg>
         </div>
-        <div class="feature-title">Analytics & Optimisation</div>
-        <div class="feature-desc">Insights and improvement built-in.</div>
+        <div class="feature-title"><strong>Analytics & Optimisation</strong></div>
+        <div class="feature-desc"><em>Insights and improvement built-in.</em></div>
       </div>
       <div class="feature-glass" tabindex="0">
         <div class="feature-icon">
           <!-- Sync SVG -->
-          <svg width="42" height="42" viewBox="0 0 38 38" fill="none">
+          <svg width="52" height="52" viewBox="0 0 38 38" fill="none">
             <circle cx="19" cy="19" r="16" stroke="#d4e157" stroke-width="2"/>
             <path d="M26 13c-3-3-8-3-11 0m0 12c3 3 8 3 11 0" stroke="#949494" stroke-width="2" fill="none"/>
             <polyline points="13,13 13,9 17,13" fill="none" stroke="#d4e157" stroke-width="2"/>
             <polyline points="25,25 25,29 21,25" fill="none" stroke="#d4e157" stroke-width="2"/>
           </svg>
         </div>
-        <div class="feature-title">Dynamic Flows</div>
-        <div class="feature-desc">Adapts as your brand and audience grow.</div>
+        <div class="feature-title"><strong>Dynamic Flows</strong></div>
+        <div class="feature-desc"><em>Adapts as your brand and audience grow.</em></div>
       </div>
     </div>
     <!-- Mentor floating glass block -->
     <div class="mentor-block" tabindex="0">
-      Ready to see how much friendlier your cart recovery can be?<br>
-      Let’s audit your abandoned carts together—quick, simple, and packed with personalized tips.<br>
-      Let’s win more together.<br>
-      You run your business. We’ll bring the friendly magic.
+      <strong>Ready to see how much friendlier your cart recovery can be?</strong><br>
+      <em>Let’s audit your abandoned carts together—quick, simple, and packed with personalized tips.</em><br>
+      <strong>Let’s win more together.</strong><br>
+      You run your business. We’ll bring the <strong>friendly magic</strong>.
     </div>
   </div>
   <footer class="footer">
     <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
     <span>&copy; 2025 Winabler. Enabling your win.</span>
     <span class="footer-email">
-      <b>Contact:</b>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <rect width="24" height="24" rx="5" fill="#d4e157"/>
+        <path d="M5 7l7 5 7-5" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M5 7v10h14V7" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
       <a href="mailto:contact@winabler.in" class="footer-email-link">contact@winabler.in</a>
     </span>
   </footer>
