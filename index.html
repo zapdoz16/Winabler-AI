@@ -91,23 +91,57 @@
       animation: fadeInUp 1s 1s backwards;
     }
     .floating-cta:hover,.floating-cta:focus {background:#c8ce1d;color:#949494;transform:scale(1.07);}
-    .comparison-table {width:100%;border-collapse:collapse;table-layout:fixed;word-break:break-word;}
-    .comparison-table th,.comparison-table td {padding:18px 6px;font-size:1.08rem;word-break:break-word;max-width:1px;box-sizing:border-box;color:#949494;}
-    .comparison-table th {font-size:1.07rem;}
-    @media (max-width:900px){
-      .problem-box,.comparison-box,.what-box,.cta-box,.pricing-box,.social-proof-box,.faq-box{padding-left:4vw !important;padding-right:4vw !important;}
-      .comparison-table th,.comparison-table td{padding:12px 2px !important;font-size:0.97rem !important;}
-      .comparison-table{display:block;overflow-x:auto;width:100%;}
-      .comparison-table thead, .comparison-table tbody, .comparison-table tr{display:block;width:100%;}
-      .comparison-table tr{display:flex;flex-direction:column;width:100%;border-bottom:1px solid #eee;}
-      .comparison-table th,.comparison-table td{width:100%;display:block;text-align:left;}
-      .feature-glass{width:93vw;max-width:360px;margin:13px 0;}
+    /* -------- MOBILE CARD COMPARISON ----------- */
+    .winabler-comparison-table {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 22px;
     }
-    .comparison-table td, .comparison-table th {white-space: normal !important;overflow-wrap: break-word !important;word-break: break-word !important;}
+    .comparison-row {
+      background: #f8f8f9;
+      border-radius: 20px;
+      box-shadow: 0 2px 12px #d4e15713;
+      padding: 20px 18px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+    .row-title {
+      font-weight: 700;
+      font-size: 1.17rem;
+      color: #949494;
+      margin-bottom: 5px;
+      letter-spacing: 0.02em;
+    }
+    .row-title span {background:linear-gradient(90deg,#949494 40%,#d4e157 100%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;
+    }
+    .row-main {display: flex;flex-direction: row;gap:18px;align-items: flex-start;margin-bottom:4px;}
+    .row-label {
+      font-weight: 700;
+      font-size: 1.09rem;
+      color: #d4e157;
+      min-width: 100px;
+      max-width: 120px;
+    }
+    .row-value {font-size: 1.09rem; color: #949494; font-weight: 500;}
+    @media (max-width: 900px) {
+      .hero-area,
+      .problem-box, .comparison-box, .what-box, .cta-box, .pricing-box, .social-proof-box, .faq-box {padding-left:4vw !important;padding-right:4vw !important;}
+      .winabler-comparison-table {gap:14px;}
+      .comparison-row {padding:15px 8px;gap:4px;}
+      .row-main {flex-direction:column;gap:2px;margin-bottom:7px;}
+      .row-label {min-width: 0;max-width: none;font-size: 1.01rem;}
+      .row-title {font-size: 1.05rem;}
+      .row-value {font-size: .99rem;}
+      .feature-glass {width:93vw;max-width:360px;margin:13px 0;}
+    }
     .features-list{display:flex;flex-wrap:wrap;gap:38px;justify-content:center;margin-top:24px;color:#949494;}
     .feature-glass{background:var(--glass-bg);border-radius:28px;box-shadow:0 4px 38px #d4e15721;padding:34px 19px;width:292px;text-align:center;animation:fadeInUp .9s backwards;transition:box-shadow .18s,transform .18s;}
     .feature-glass:hover{box-shadow:0 12px 48px #d4e15751;transform:translateY(-7px) scale(1.06);}
-    .feature-step{font-size:1.22rem;margin-bottom:10px;color:#d4e157!important;font-weight:750;}
+    .feature-step{font-size:1.22rem;margin-bottom:10px;color:#d4e157 !important;font-weight:750;}
     .feature-icons{font-size:2.13rem;margin-bottom:13px;color:#d4e157;animation:iconPop .6s;}
     @keyframes iconPop{0%{transform:scale(0);}100%{transform:scale(1);}}
     .footer{background:linear-gradient(90deg,#f9fae1 70%,#d4e157 100%);border-top:2.2px solid #e8f5e9;padding:32px 0;text-align:center;font-size:1.19rem;font-family:'Inter',Arial,sans-serif;color:#949494;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap;animation:fadeIn 1.1s .8s backwards;}
@@ -181,46 +215,79 @@
       <li><strong>Performance Tracking</strong> – 100% transparent recovery report</li>
     </ul>
   </div>
+  <!-- BEGIN MOBILE-FRIENDLY COMPARISON SECTION -->
   <div class="section comparison-box">
     <div class="section-gradient-title">★ What Makes Winabler Different</div>
-    <table class="comparison-table">
-      <tr>
-        <th>What Matters Most</th>
-        <th>Winabler</th>
-        <th>Other Tools</th>
-      </tr>
-      <tr>
-        <td>🎤 Sounds Like Your Brand</td>
-        <td>Messages crafted in <strong>your voice</strong>—feels personal</td>
-        <td>Generic templates, robotic automation</td>
-      </tr>
-      <tr>
-        <td>📱 WhatsApp-First</td>
-        <td>Built for India—<strong>90% open rates</strong>, native WhatsApp experience</td>
-        <td>Email-first tools, WhatsApp is an afterthought</td>
-      </tr>
-      <tr>
-        <td>⚡ Setup Time</td>
-        <td>Live in <strong>48 hours</strong> (done-for-you)</td>
-        <td>2-3 weeks DIY setup</td>
-      </tr>
-      <tr>
-        <td>🎯 Personalization</td>
-        <td>Dynamic messages: product, cart value, customer type</td>
-        <td>Same message for everyone</td>
-      </tr>
-      <tr>
-        <td>📈 Results You See</td>
-        <td><strong>25-30% recovery</strong> rate, transparent dashboard</td>
-        <td>8-12% with vague reporting</td>
-      </tr>
-      <tr>
-        <td>💳 Pricing</td>
-        <td>Pay only for results (performance-based)</td>
-        <td>Fixed fee regardless of outcome</td>
-      </tr>
-    </table>
+    <div class="winabler-comparison-table">
+      <div class="comparison-row">
+        <div class="row-title">🎤 <span>Sounds Like Your Brand</span></div>
+        <div class="row-main">
+          <div class="row-label">Winabler</div>
+          <div class="row-value">Messages crafted in <strong>your voice</strong>—feels personal</div>
+        </div>
+        <div class="row-main">
+          <div class="row-label">Other Tools</div>
+          <div class="row-value">Generic templates, robotic automation</div>
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="row-title">📱 <span>WhatsApp-First</span></div>
+        <div class="row-main">
+          <div class="row-label">Winabler</div>
+          <div class="row-value">Built for India—<strong>90% open rates</strong>, native WhatsApp experience</div>
+        </div>
+        <div class="row-main">
+          <div class="row-label">Other Tools</div>
+          <div class="row-value">Email-first tools, WhatsApp is an afterthought</div>
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="row-title">⚡ <span>Setup Time</span></div>
+        <div class="row-main">
+          <div class="row-label">Winabler</div>
+          <div class="row-value">Live in <strong>48 hours</strong> (done-for-you)</div>
+        </div>
+        <div class="row-main">
+          <div class="row-label">Other Tools</div>
+          <div class="row-value">2-3 weeks DIY setup</div>
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="row-title">🎯 <span>Personalization</span></div>
+        <div class="row-main">
+          <div class="row-label">Winabler</div>
+          <div class="row-value">Dynamic messages: product, cart value, customer type</div>
+        </div>
+        <div class="row-main">
+          <div class="row-label">Other Tools</div>
+          <div class="row-value">Same message for everyone</div>
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="row-title">📈 <span>Results You See</span></div>
+        <div class="row-main">
+          <div class="row-label">Winabler</div>
+          <div class="row-value"><strong>25-30% recovery</strong> rate, transparent dashboard</div>
+        </div>
+        <div class="row-main">
+          <div class="row-label">Other Tools</div>
+          <div class="row-value">8-12% with vague reporting</div>
+        </div>
+      </div>
+      <div class="comparison-row">
+        <div class="row-title">💳 <span>Pricing</span></div>
+        <div class="row-main">
+          <div class="row-label">Winabler</div>
+          <div class="row-value">Pay only for results (performance-based)</div>
+        </div>
+        <div class="row-main">
+          <div class="row-label">Other Tools</div>
+          <div class="row-value">Fixed fee regardless of outcome</div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- END MOBILE-FRIENDLY COMPARISON SECTION -->
   <div class="section section-features">
     <div class="section-gradient-title">🚀 How Winabler Works—The Simple Version</div>
     <div class="features-list">
