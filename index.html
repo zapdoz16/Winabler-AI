@@ -1,387 +1,375 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Winabler | Smart, Secure, Cutting-Edge AI for D2C Brands</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- SF Pro Display + Inter Font Setup -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      background: linear-gradient(135deg, #e8ffe7 0%, #d7e6ff 100%);
-      font-family: 'Inter', 'SF Pro Display', 'Segoe UI', Arial, sans-serif;
-      color: #181c24;
-      min-height: 100vh;
-    }
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 32px 48px 0 48px;
-      background: rgba(255,255,255,0.8);
-      backdrop-filter: blur(8px);
-      border-bottom-left-radius: 36px;
-      border-bottom-right-radius: 36px;
-      box-shadow: 0 6px 28px rgba(35,44,99,0.14);
-    }
-    .logo {
-      width: 72px;
-      height: 72px;
-      background: none;
-      object-fit: contain;
-      margin-right: 36px;
-      border-radius: 18px;
-      box-shadow: 0 2px 12px rgba(84,191,255,0.06);
-    }
-    .header-title {
-      font-size: 2.05rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      color: #161a23;
-    }
-    .hero {
-      padding: 60px 24px 54px 24px;
-      text-align: center;
-      background: linear-gradient(120deg, rgba(201,231,109,0.98) 0%, #b2e495 54%, #e1edffc8 100%);
-      border-radius: 42px;
-      margin: 32px 0;
-      box-shadow: 0 12px 32px rgba(156,186,255,0.11);
-      max-width: 980px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .hero h1 {
-      font-size: 2.9rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      color: #191b1f;
-      letter-spacing: 0.02em;
-    }
-    .hero h2 {
-      font-size: 1.25rem;
-      color: #3f464e;
-      margin-bottom: 38px;
-      font-weight: 600;
-    }
-    .hero-btns {
-      display: flex;
-      justify-content: center;
-      gap: 18px;
-      margin-top: 30px;
-      flex-wrap: wrap;
-    }
-    .btn {
-      padding: 16px 36px;
-      font-size: 1.11rem;
-      font-weight: 700;
-      border-radius: 11px;
-      border: none;
-      cursor: pointer;
-      margin: 7px;
-      box-shadow: 0 2px 18px rgba(30,160,130,0.085);
-      transition: box-shadow .23s,transform .22s,background .16s;
-    }
-    .btn:active, .btn:focus {transform: scale(0.97);}
-    .winabler-btn {
-      background: linear-gradient(90deg, #88dc65 0%, #d0f26c 100%);
-      color: #181c24;
-      border: 2px solid #c9e76d;
-    }
-    .winabler-btn:hover {
-      background: linear-gradient(90deg, #62c355 0%, #f1ffdf 100%);
-      box-shadow: 0 8px 32px rgba(133,210,121,.32);
-    }
-    .outline-btn {
-      background: transparent;
-      color: #299f36;
-      border: 2px solid #95e293;
-    }
-    .outline-btn:hover {
-      background: #e9faee;
-      box-shadow: 0 4px 24px rgba(141,209,101,0.13);
-    }
-    .grey-btn {
-      background: #424764;
-      color: #fff;
-      border: 2px solid #4f5063;
-    }
-    .grey-btn:hover {
-      background: #232745;
-      box-shadow: 0 6px 24px rgba(176,180,200,0.15);
-    }
-    .trust-section {
-      max-width: 980px;
-      margin: 38px auto 0 auto;
-      background: rgba(255,255,255,0.91);
-      border-radius: 18px;
-      padding: 38px;
-      box-shadow: 0 3px 30px rgba(87,156,214,0.09);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 18px;
-      font-size: 1.07rem;
-    }
-    .logos {display:flex;gap:24px;margin-bottom:16px;flex-wrap:wrap;justify-content:center;}
-    .logos img {
-      height: 38px;
-      background: #fff;
-      border-radius: 5px;
-      box-shadow: 0 1px 9px rgba(120,180,200,0.11);
-      padding: 4px;
-    }
-    .testimonials {
-      display: flex;
-      gap: 28px;
-      font-style: italic;
-      color: #252d44;
-    }
-    .impact-stats {
-      display: flex;
-      gap: 28px;
-      justify-content:center;
-      font-size:1.11rem;
-      color:#191c2c;
-    }
-    .impact-stats span {
-      font-weight: bold;
-      color: #78dc53;
-    }
-    .packages-section {
-      background: rgba(255,255,255,0.96);
-      border-radius: 18px;
-      box-shadow: 0 3px 30px rgba(87,156,214,0.08);
-      max-width: 980px;
-      margin: 54px auto 0 auto;
-      padding: 40px;
-    }
-    .package-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 34px;
-      margin-top: 26px;
-      justify-content:center;
-    }
-    .package {
-      border-radius: 11px;
-      background: rgba(245,247,255,0.97);
-      box-shadow: 0 3px 14px rgba(100,200,120,0.06);
-      flex:1;
-      min-width:230px;
-      max-width:330px;
-      padding:29px 18px;
-      margin:10px;
-      font-size:1.12rem;
-      transition:box-shadow .16s,transform .16s;
-    }
-    .package:hover {box-shadow: 0 8px 30px rgba(120,210,140,.16);transform:translateY(-5px);}
-    .package-title {color: #222;font-weight:700;font-size:1.13rem;margin-bottom:12px;}
-    .custom-section {
-      background: #fff;
-      border-radius: 18px;
-      box-shadow: 0 3px 30px rgba(120,180,200,0.09);
-      max-width: 980px;
-      margin: 48px auto 0 auto;
-      padding: 42px;
-    }
-    .custom-list {display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;justify-content:center;}
-    .custom-item {
-      background: rgba(238,248,245,0.92);
-      border: 1px solid #e2eecb;
-      border-radius: 8px;
-      padding: 8px 14px;
-      margin: 3px 0;
-      min-width:140px;
-      font-weight:600;
-      color:#384a54;
-      letter-spacing:0.02em;
-      font-size:1.02rem;
-      transition:background .13s,box-shadow .15s;
-    }
-    .custom-item:hover {background: #e5ffef;box-shadow:0 3px 14px rgba(86,216,141,.09);}
-    .contact-section {
-      background: linear-gradient(92deg, #f8fafc 40%, #c9e76d33 100%);
-      max-width: 880px;
-      margin: 54px auto 0 auto;
-      padding: 44px 30px;
-      border-radius: 20px;
-      box-shadow: 0 3px 18px rgba(200,235,125,0.10);
-      text-align:center;
-    }
-    .contact-form {display:grid;gap:14px;margin:18px auto 0 auto;max-width:420px;}
-    input, textarea, select {
-      padding:12px;
-      border-radius:9px;
-      border:1px solid #dee7e6;
-      font-size:1.03rem;font-family:inherit;
-      background:rgba(255,255,255,0.93);
-      font-weight:500;
-      transition:border .1s;
-    }
-    input:focus, textarea:focus, select:focus {border:1.8px solid #a8e9a7;}
-    .footer {
-      background: rgba(255,255,255,0.9);
-      text-align: center;
-      padding: 34px 0 19px 0;
-      color: #444e64;
-      font-size:1.04rem;
-      margin-top:44px;
-      border-top:1px solid #e5e7eb;
-      border-bottom-right-radius:18px;
-      border-bottom-left-radius:18px;
-    }
-    @media (max-width: 900px) {
-      .header, .hero, .trust-section, .packages-section, .custom-section, .contact-section {
-        padding-left: 7vw; padding-right: 7vw;
-      }
-      .header-title {font-size:1.17rem;}
-      .hero h1 {font-size:1.45rem;}
-    }
-    @media (max-width: 600px) {
-      .header-title {font-size:1.03rem;}
-      .hero h1 {font-size:1.02rem;}
-      .package-list, .custom-list {flex-direction:column;}
-      .header {padding:18px 8px 0 8px;}
-      .footer {padding:22px 0;}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Winabler - AI-Powered WhatsApp Cart Recovery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --winabler-green: #d4e157;
+            --winabler-gray: #949494;
+            --winabler-dark: #222;
+            --winabler-table-bg: #f8f8f8;
+            --winabler-table-head-bg: #e8f5e9;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #fff 70%, #e8f5e9 100%);
+            color: var(--winabler-dark);
+        }
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 16px 16px 16px;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 16px;
+            animation: fadeInDown 1s cubic-bezier(.57,.49,.37,.99) forwards;
+        }
+        .logo img {
+            width: 220px;
+            height: auto;
+            box-shadow: 0 2px 12px rgba(212,225,87,.12);
+            border-radius: 14px;
+        }
+        h1 {
+            text-align: center;
+            color: var(--winabler-green);
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 0 0 12px 0;
+            letter-spacing: 1px;
+            animation: fadeInDown 1.2s .3s backwards;
+        }
+        .subheadline {
+            text-align: center;
+            color: var(--winabler-gray);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 34px;
+            animation: fadeInUp 1.1s .3s backwards;
+        }
+        .hero {
+            text-align: center;
+            background: var(--winabler-table-bg);
+            border-radius: 18px;
+            padding: 36px 18px 30px 18px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 24px rgba(212,225,87,.16);
+            animation: fadeIn 1.4s .5s backwards;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero .animated-bubble {
+            position: absolute;
+            right: 36px;
+            top: 28px;
+            width: 70px;
+            opacity: 0.4;
+            animation: bubbleFloat 5s infinite alternate;
+        }
+        @keyframes bubbleFloat {
+            0% { transform: translateY(0);}
+            100% {transform: translateY(-22px);}
+        }
+        .hero .stat {
+            color: var(--winabler-green);
+            font-size: 1.7rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .hero .cta-btn {
+            display: inline-block;
+            margin-top: 23px;
+            background: var(--winabler-green);
+            color: #222;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 15px 38px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 24px rgba(212,225,87,.16);
+            border: none;
+            transition: background .22s, transform .22s;
+            animation: fadeInUp 1.2s .8s backwards;
+        }
+        .cta-btn:hover {
+            background: #c0d94a;
+            transform: scale(1.07);
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.7rem;
+            color: var(--winabler-green);
+            font-weight: 600;
+            margin: 52px 0 26px 0;
+            animation: fadeInDown 1.1s .6s backwards;
+        }
+        .compare-table {
+            margin: 0 auto 40px auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            box-shadow: 0 3px 14px rgba(0,0,0,.08);
+            border-radius: 14px;
+            overflow: hidden;
+            background: var(--winabler-table-bg);
+            width: 100%;
+            max-width: 680px;
+            animation: fadeIn 1.4s .75s backwards;
+        }
+        .compare-table th, .compare-table td {
+            padding: 16px 12px;
+            font-size: 1.08rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .compare-table th {
+            background: var(--winabler-table-head-bg);
+            color: var(--winabler-green);
+            font-weight: 700;
+            border-bottom: 2px solid var(--winabler-green);
+            text-align: center;
+        }
+        .compare-table td {
+            color: var(--winabler-dark);
+        }
+        .compare-table tr:last-child td {
+            border-bottom: none;
+        }
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 48px;
+            animation: fadeIn 1.5s .6s backwards;
+        }
+        .feature {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 22px rgba(212,225,87,.09);
+            padding: 26px 16px 26px 16px;
+            width: 216px;
+            text-align: center;
+            transition: transform .22s, box-shadow .22s;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature:hover {
+            box-shadow: 0 8px 36px rgba(212,225,87,.18);
+            transform: scale(1.04);
+        }
+        .feature-icon {
+            margin-bottom: 12px;
+            animation: iconPop 1s backwards;
+        }
+        @keyframes iconPop {
+            0% { transform: scale(0);}
+            80% { transform: scale(1.18);}
+            100% { transform: scale(1);}
+        }
+        .feature-title {
+            font-weight: bold;
+            margin-bottom: 6px;
+            color: var(--winabler-green);
+        }
+        .feature-desc {
+            font-size: 1rem;
+            color: var(--winabler-gray);
+        }
+        .mentor-message {
+            text-align: center;
+            color: var(--winabler-dark);
+            font-size: 1.18rem;
+            margin: 30px 0 50px 0;
+            animation: fadeInUp 1.3s .9s backwards;
+        }
+        .footer {
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+            padding: 18px 0;
+            text-align: center;
+            font-size: 1rem;
+            color: var(--winabler-gray);
+            animation: fadeInUp 1s 1.2s backwards;
+        }
+        .footer img {
+            height:28px;
+            vertical-align:middle;
+            margin-right:8px;
+        }
+        /* Animation keyframes */
+        @keyframes fadeInDown {
+            0% {opacity:0;transform:translateY(-40px);}
+            100% {opacity:1;transform:translateY(0);}
+        }
+        @keyframes fadeInUp {
+            0% {opacity:0;transform:translateY(20px);}
+            100% {opacity:1;transform:translateY(0);}
+        }
+        @keyframes fadeIn {
+            from {opacity:0;}
+            to {opacity:1;}
+        }
+        @media (max-width: 850px) {
+            h1 { font-size: 2rem; }
+            .hero { padding: 18px 5px 14px 5px; }
+            .features-grid { gap: 14px; }
+            .feature { width: 100%; max-width: 330px; }
+            .section-title { font-size: 1.2rem; }
+            .container { padding: 18px 3px;}
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <!-- Placeholder modern SVG logo (replace with your logo file for brands) -->
-    <svg class="logo" viewBox="0 0 48 48">
-      <defs>
-        <linearGradient id="wgreen" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#88dc65"/>
-          <stop offset="100%" stop-color="#b7e27a"/>
-        </linearGradient>
-      </defs>
-      <circle cx="24" cy="24" r="22" fill="url(#wgreen)"/>
-      <text x="50%" y="61%" font-size="24" fill="#242c39" font-family="Inter, 'SF Pro Display'" text-anchor="middle">W</text>
-    </svg>
-    <div class="header-title">Winabler: Fast, Trustworthy, Rock-Solid AI Solutions for D2C E-commerce</div>
-  </div>
-  <section class="hero">
-    <h1>Ready to win at e-commerce?</h1>
-    <h2>Experience the future now—hyper-fast, bulletproof AI that puts your brand ahead, every time, all the time.</h2>
-    <div class="hero-btns">
-      <button class="btn winabler-btn">View Service Packages</button>
-      <button class="btn outline-btn">Build Your Own Solution</button>
-      <button class="btn grey-btn">Book a Free Consultation</button>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
+        </div>
+        <!-- Headline & Subheadline -->
+        <h1>Winabler: AI-Powered, Humanized Cart Recovery on WhatsApp</h1>
+        <div class="subheadline">
+            Abandoned carts? Unlock lost sales with AI chats crafted in your brand’s voice—real connections, zero tech headaches.
+        </div>
+        <!-- Hero Section -->
+        <div class="hero">
+            <span class="animated-bubble">
+                <!-- Bubble SVG for motion -->
+                <svg viewBox="0 0 70 70" fill="none">
+                  <ellipse cx="35" cy="35" rx="32" ry="23" fill="#d4e157"/>
+                  <ellipse cx="30" cy="60" rx="8" ry="4" fill="#949494" opacity="0.3"/>
+                </svg>
+            </span>
+            <div class="stat">
+                Indian D2C brands lose up to <b>70% of potential sales every month</b> to abandoned carts.
+            </div>
+            <div>
+                Imagine picking up even <b>25%</b> of those lost orders—how far could your brand go?<br>
+                Meet Winabler—your friendly growth mentor with a dash of AI wizardry.<br>
+                We help bring those carts home, through WhatsApp conversations that sound just like you.
+            </div>
+            <a class="cta-btn" href="YOUR-CALENDLY-LINK-HERE" target="_blank">Book Your Quick Cart Audit</a>
+        </div>
+        <!-- Comparison Table -->
+        <div class="section-title">Why Winabler? See The Difference In Seconds</div>
+        <table class="compare-table">
+            <thead>
+                <tr>
+                    <th>What Matters Most</th>
+                    <th>Winabler</th>
+                    <th>Competitors</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Real brand voice</td>
+                    <td>Chats that feel 100% you</td>
+                    <td>Generic, one-size-fits-all flows</td>
+                </tr>
+                <tr>
+                    <td>Human touch</td>
+                    <td>Warm, personal conversations</td>
+                    <td>Robotic or scripted replies</td>
+                </tr>
+                <tr>
+                    <td>Setup</td>
+                    <td>Effortless, no tech hassle</td>
+                    <td>Complicated, often needs support</td>
+                </tr>
+                <tr>
+                    <td>Smart adaptation</td>
+                    <td>Learns & improves with every chat</td>
+                    <td>Stays the same, rarely adapts</td>
+                </tr>
+                <tr>
+                    <td>Results</td>
+                    <td>Builds loyalty—recovers more sales</td>
+                    <td>Just reminders, fewer sales</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Features Grid with SVG icons -->
+        <div class="section-title">Feature Snapshot</div>
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">
+                    <!-- WhatsApp Icon SVG -->
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                     <circle cx="19" cy="19" r="18" fill="#d4e157" stroke="#949494" stroke-width="2"/>
+                     <path d="M12 25c6 3 8 3 12-5 M14 14c0-4 8-4 8 0" stroke="#222" stroke-width="1.5" fill="none" />
+                    </svg>
+                </div>
+                <div class="feature-title">WhatsApp-First</div>
+                <div class="feature-desc">90% open rates, where your customers are.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <!-- Palette Icon SVG -->
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                     <ellipse cx="19" cy="21" rx="16" ry="12" fill="#d4e157" opacity="0.6"/>
+                     <circle cx="13" cy="17" r="2" fill="#949494"/>
+                     <circle cx="19" cy="11" r="2.5" fill="#949494"/>
+                     <circle cx="25" cy="17" r="2" fill="#949494"/>
+                     <circle cx="19" cy="27" r="2" fill="#949494"/>
+                    </svg>
+                </div>
+                <div class="feature-title">Your Brand’s Voice</div>
+                <div class="feature-desc">Every message sounds exactly like you.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <!-- Flash Icon SVG -->
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                     <polygon points="14,5 32,19 23,21 25,33 6,19 13,18" fill="#d4e157" stroke="#949494" stroke-width="1"/>
+                    </svg>
+                </div>
+                <div class="feature-title">Effortless Setup</div>
+                <div class="feature-desc">No coding, no tech learning curve.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <!-- Analytics Icon SVG -->
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                        <rect x="7" y="20" width="4" height="8" fill="#949494"/>
+                        <rect x="15" y="15" width="4" height="13" fill="#d4e157"/>
+                        <rect x="23" y="10" width="4" height="18" fill="#949494"/>
+                        <rect x="31" y="26" width="4" height="2" fill="#949494"/>
+                        <rect x="31" y="10" width="4" height="10" fill="#d4e157"/>
+                    </svg>
+                </div>
+                <div class="feature-title">Analytics & Optimisation</div>
+                <div class="feature-desc">Insights and improvement built-in.</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">
+                    <!-- Sync Icon SVG -->
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                     <circle cx="19" cy="19" r="16" stroke="#d4e157" stroke-width="2"/>
+                     <path d="M26 13c-3-3-8-3-11 0m0 12c3 3 8 3 11 0" stroke="#949494" stroke-width="2" fill="none"/>
+                     <polyline points="13,13 13,9 17,13" fill="none" stroke="#d4e157" stroke-width="2"/>
+                     <polyline points="25,25 25,29 21,25" fill="none" stroke="#d4e157" stroke-width="2"/>
+                    </svg>
+                </div>
+                <div class="feature-title">Dynamic Flows</div>
+                <div class="feature-desc">Adapts as your brand and audience grow.</div>
+            </div>
+        </div>
+        <!-- Mentor Message -->
+        <div class="mentor-message">
+            Ready to see how much friendlier your cart recovery can be?<br>
+            Let’s audit your abandoned carts together—quick, simple, and packed with personalized tips.<br>
+            Let’s win more together.<br>
+            You run your business. We’ll bring the friendly magic.
+        </div>
     </div>
-  </section>
-  <section class="trust-section">
-    <div class="logos">
-      <!-- Brand and Client Logos -->
-      <svg height="38" viewBox="0 0 38 38">
-        <circle cx="19" cy="19" r="17" fill="#c9e76d"/><text x="50%" y="62%" font-size="18" fill="#181c24" font-family="Inter, 'SF Pro Display'" text-anchor="middle">W</text>
-      </svg>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" alt="Client Logo 1" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="Client Logo 2" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/47/React.svg" alt="Client Logo 3" />
+    <!-- Footer -->
+    <div class="footer">
+        <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
+        &copy; 2025 Winabler. Enabling your win.
     </div>
-    <div class="testimonials">
-      <span>"Winabler helped us double our monthly sales—rock solid service!"</span>
-      <span>"Support queries resolved in minutes, not hours!"</span>
-    </div>
-    <div class="impact-stats">
-      <div> <span>150+</span> brands empowered </div>
-      <div> <span>99%</span> client satisfaction </div>
-      <div> <span>40+</span> languages supported </div>
-    </div>
-  </section>
-  <section class="packages-section">
-    <h2 style="text-align:center; color:#222; font-weight:800; font-size:1.5rem;">Our Packages</h2>
-    <div class="package-list">
-      <div class="package">
-        <div class="package-title">Starter: Essential AI Enablement</div>
-        <ul>
-          <li>AI chatbot deployment (web, WhatsApp, email)</li>
-          <li>Personalized product recommendations</li>
-          <li>Seamless integration and staff training</li>
-        </ul>
-      </div>
-      <div class="package">
-        <div class="package-title">Growth: Automated Engagement & Optimization</div>
-        <ul>
-          <li>Support automation end-to-end</li>
-          <li>Advanced recommendation engine</li>
-          <li>Inventory & demand forecasting</li>
-          <li>WhatsApp commerce integration</li>
-          <li>Abandoned cart recovery</li>
-        </ul>
-      </div>
-      <div class="package">
-        <div class="package-title">Enterprise: Digital Transformation & Decision Support</div>
-        <ul>
-          <li>Predictive analytics & risk detection</li>
-          <li>Dynamic pricing optimization</li>
-          <li>Intelligent logistics & courier allocation</li>
-          <li>RTO reduction & address verification</li>
-          <li>Robust data privacy & API integration</li>
-        </ul>
-      </div>
-    </div>
-    <div style="text-align:center; margin-top:20px;">
-      <button class="btn outline-btn">Compare Packages</button>
-    </div>
-  </section>
-  <section class="custom-section">
-    <h2 style="text-align:center; color:#222; font-weight:800;">Prefer a Custom Solution?</h2>
-    <div style="text-align:center; font-weight:600;">Mix and match AI services for your perfect fit. Get instant estimate & flexibility:</div>
-    <div class="custom-list">
-      <div class="custom-item">AI Chatbots (Web/WhatsApp/Email)</div>
-      <div class="custom-item">Personalized Recommendations</div>
-      <div class="custom-item">Advanced Recommendation Engine</div>
-      <div class="custom-item">Support Automation</div>
-      <div class="custom-item">Inventory Forecasting</div>
-      <div class="custom-item">WhatsApp Commerce</div>
-      <div class="custom-item">Abandoned Cart Recovery</div>
-      <div class="custom-item">Predictive Analytics</div>
-      <div class="custom-item">Dynamic Pricing</div>
-      <div class="custom-item">Intelligent Fulfillment</div>
-      <div class="custom-item">RTO Reduction</div>
-      <div class="custom-item">Data Privacy / Compliance</div>
-      <div class="custom-item">Tech/API Integration</div>
-      <div class="custom-item">Team Training</div>
-    </div>
-    <div style="text-align:center; margin-top:16px;">
-      <button class="btn winabler-btn">Get Instant Quote</button>
-      <button class="btn outline-btn">Book Consultation</button>
-    </div>
-  </section>
-  <section class="contact-section">
-    <h2 style="color:#222; font-weight:800;">Let’s Accelerate Your Win!</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="text" placeholder="Company Name">
-      <input type="email" placeholder="Email Address" required>
-      <input type="tel" placeholder="Phone Number">
-      <input type="text" placeholder="Role/Position">
-      <select>
-        <option>Interested In...</option>
-        <option>Starter Package</option>
-        <option>Growth Package</option>
-        <option>Enterprise Package</option>
-        <option>Custom Package</option>
-      </select>
-      <textarea rows="3" placeholder="Additional Requirements"></textarea>
-      <button type="submit" class="btn winabler-btn">Schedule a Call</button>
-      <button type="submit" class="btn outline-btn">Request a Proposal</button>
-      <button type="button" class="btn grey-btn">WhatsApp Chat</button>
-    </form>
-    <div style="font-size:0.99rem; color:#888; margin-top:10px;">
-      Your privacy is protected. We never share your information. GDPR compliant.
-    </div>
-  </section>
-  <div class="footer">
-    About | Service Packages | Build Your Own | Contact | Privacy Policy | Terms & Conditions<br>
-    Social: LinkedIn | Twitter | Instagram<br>
-    GDPR Compliant • Made in India<br>
-    © 2025 Winabler. All rights reserved.
-  </div>
 </body>
 </html>
