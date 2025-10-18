@@ -5,340 +5,360 @@
   <title>Winabler - AI-Powered WhatsApp Cart Recovery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    @import url('https://fonts.googleapis.com/css?family=Helvetica+Neue:400,600,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
     :root {
-      --winabler-green: #d4e157;
-      --winabler-gray: #949494;
+      --trust-blue: #2176ff;
+      --growth-green: #22bb66;
+      --winabler-gray: #444;
       --winabler-dark: #222;
-      --glass-bg: rgba(255,255,255,0.85);
-      --winabler-gradient: linear-gradient(90deg, #d4e157 8%, #e8f5e9 100%);
+      --winabler-orange: #ff7a36;
+      --winabler-gradient: linear-gradient(100deg, #2176ff 7%, #22bb66 85%);
+      --winabler-gradient-vert: linear-gradient(180deg, #eff7ff 60%, #22bb66 100%);
+      --glass-bg: rgba(255,255,255,0.84);
+      --faq-bg: #f7faff;
     }
     body {
-      margin: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background: radial-gradient(ellipse at top right, #d4e15744 0%, #e8f5e9 100%);
-      color: var(--winabler-dark); min-height: 100vh;
+      margin: 0; font-family: 'Inter', Arial, sans-serif; background: var(--winabler-gradient-vert); color: var(--winabler-dark); min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
-    .navbar {position: fixed; top: 0; left: 0; width: 100%; height: 120px;
-      background: rgba(255,255,255,.93); box-shadow: 0 4px 28px #d4e15726;
-      display: flex; align-items: center; justify-content: center; z-index: 99; backdrop-filter: blur(10px);}
-    .navbar img {height: 92px; width: auto; border-radius: 18px; box-shadow: 0 6px 32px #d4e15733; margin-right: 18px;}
-    .navbar-title {font-size: 1.3rem; font-weight: bold; color: var(--winabler-green); letter-spacing: .04em;}
-    .page-wrap {max-width: 1200px; margin: 0 auto; padding: 140px 18px 0 18px;}
-    .hero-logo {display: flex; justify-content: center; align-items: center; margin-bottom: 20px; margin-top: 4px;}
-    .hero-logo img {height: 140px; width: auto; border-radius: 32px; box-shadow: 0 18px 88px #d4e15744, 0 2px 32px #d4e15718;}
-    .section {margin-bottom: 70px;}
-    .section-title {text-align: center; font-size: 2rem; color: var(--winabler-green); font-weight: 700;}
-    .section-title em {font-style: italic;}
-    .problem-box {
-      background: var(--glass-bg); border-radius: 30px; box-shadow: 0 8px 60px #d4e15722;
-      padding: 50px 32px 40px 32px; text-align: center; margin-bottom: 50px; font-size: 1.28rem;
+    .hero-logo {
+      display:flex; justify-content:center; align-items:center;
+      padding-top:44px; margin-bottom:18px;
     }
-    .problem-box ul, .problem-box li, .section-features li {text-align: left;}
-    .problem-box strong, .section-features strong {font-weight:bold;}
-    .problem-box ul {list-style-type: disc; margin:18px 0 0 30px;padding:0;}
-    .problem-box .icon {vertical-align:middle; margin-right:6px;}
-    .comparison-box {
-      background: var(--glass-bg); border-radius: 30px; box-shadow: 0 8px 60px #d4e15722;
-      padding: 40px 30px; margin-bottom: 50px;
+    .hero-logo img {
+      height:128px; width:auto; border-radius:24px; box-shadow:0 14px 88px #2176ff33;
     }
-    .comparison-table {width: 100%; border-collapse: collapse; margin: 0 auto;}
-    .comparison-table th, .comparison-table td {padding: 16px; font-size: 1.15rem;}
-    .comparison-table th {background: #e8f5e9; color: var(--winabler-green); font-weight: 700; text-align: center;}
-    .comparison-table td {text-align: center;}
-    .features-list {display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;}
-    .feature-glass {
-      background: var(--glass-bg);
-      border-radius: 24px;
-      box-shadow: 0 8px 54px #d4e15722;
-      padding: 36px 26px;
-      width: 260px;
-      text-align: center;
-      margin-bottom: 18px;
+    .headline {
+      font-size:2.9rem; font-weight: 700; color: var(--trust-blue); text-align:center; margin-bottom:12px; letter-spacing:.014em;
+      background: linear-gradient(90deg, #2176ff 0%, #22bb66 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
-    .feature-step {font-size: 1.18rem; margin-bottom: 16px;}
-    .feature-icons {font-size: 2.2rem; margin-bottom: 12px;}
-    .features-list strong, .features-list em {color: var(--winabler-green);}
-    .what-box, .results-box, .faq-box, .cta-box, .pricing-box, .social-proof-box {
-      background: var(--glass-bg);
-      border-radius: 30px;
-      box-shadow: 0 8px 60px #d4e15722;
-      padding: 36px 24px;
-      margin-bottom: 46px;
-      font-size: 1.16rem;
+    .subheadline {
+      text-align:center; font-size:1.3rem; color:var(--winabler-gray); margin-bottom:40px;
     }
-    .what-box ul, .results-box ul {list-style-type: square; margin:14px 0 0 38px;}
-    .what-box strong, .results-box strong, .cta-box strong, .section-title strong {color: var(--winabler-green);}
-    .pricing-table {width:100%;margin:14px 0;}
-    .pricing-table th {background: #e8f5e9; font-size:1.13rem;}
-    .pricing-table td {vertical-align:top;}
-    .pricing-highlight {background:#d4e15722; padding:18px; border-radius:18px; margin:14px 0;}
-    .cta-box {text-align:center;}
+    .section {max-width:980px;margin:0 auto 48px auto;position:relative;}
+    .section-title {
+      font-size:2rem; color:var(--growth-green); font-weight:700; text-align:center; margin-bottom:18px;
+      position:relative;display:inline-block;padding-bottom:8px;border-bottom:3px solid var(--growth-green);
+      background:linear-gradient(90deg,#22bb66 56%, #2176ff 90%);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .section-title .icon {vertical-align:middle; font-size:1.6rem;}
+    .problem-box, .comparison-box, .what-box, .results-box, .cta-box, .pricing-box, .social-proof-box {
+      background:var(--glass-bg); border-radius:22px; box-shadow:0 4px 44px #2176ff22; padding:34px 24px; margin-bottom:38px;
+    }
+    .problem-box ul, .problem-box li, .what-box ul {text-align:left;}
+    .problem-box ul, .what-box ul {margin:14px 0 0 40px;}
     .cta-btn {
-      background: var(--winabler-gradient); color: #1e3200; font-weight: 700;
-      font-size: 1.31rem; padding: 22px 60px; border-radius: 40px; text-decoration: none;
-      display: inline-block; margin:32px 0 8px 0; box-shadow: 0 7px 38px #d4e15788; transition: box-shadow .18s, transform .18s;
-      cursor: pointer;
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background:var(--winabler-orange); color:#fff; font-weight:700; font-size:1.22rem; padding:18px 48px;
+      border:none; border-radius:32px; box-shadow:0 8px 40px #ff7a3644; cursor:pointer; margin-top:18px; margin-bottom:14px;
+      text-decoration:none; letter-spacing:.03em; display:inline-block; transition:background .18s,transform .16s;
     }
-    .cta-btn:hover {box-shadow:0 14px 84px #d4e157BB;transform:scale(1.05);}
-    .cta-box .bold {font-weight: bold;}
+    .cta-btn:focus, .cta-btn:hover {background:#ff914d;transform:scale(1.04);}
+    .comparison-table {width:100%;border-collapse:collapse;}
+    .comparison-table th {background:#2176ff18;font-size:1.07rem;color:var(--trust-blue);}
+    .comparison-table th, .comparison-table td {padding:17px 10px;text-align:center;overflow-wrap:break-word;}
+    .comparison-table td {background:#f7faff;}
+    .comparison-table tr td:first-child {background:#22bb6611;}
+    .comparison-table tr td:nth-child(2) {background:#eff7ffee;font-weight:500;}
+    .comparison-table tr td:last-child {background:#fff;}
+    .comparison-table tr td .icon {margin-right:6px;}
+    .features-list {display:flex; flex-wrap:wrap; gap:32px; justify-content:center;}
+    .feature-glass {background:var(--glass-bg); border-radius:20px; box-shadow:0 4px 28px #22bb6622;
+      padding:28px 14px;width:255px; text-align:center; margin-bottom:14px;}
+    .feature-step {font-size:1.16rem;margin-bottom:7px;}
+    .feature-icons {font-size:2.1rem;margin-bottom:10px;color:var(--trust-blue);}
+    .what-box ul {margin-top:12px;}
+    .pricing-table {width:100%; margin:16px 0;}
+    .pricing-card {margin-bottom:20px;padding:20px 20px 14px 20px;background:#e7f7ee;border-radius:22px;box-shadow:0 2px 16px #22bb6640;}
+    .pricing-card .title {color:var(--winabler-orange);font-size:1.15rem;font-weight:bold;}
+    .pricing-card ul {margin-top:10px;text-align:left;}
+    .social-proof-box blockquote {margin:18px 0 6px 0;padding-left:12px;border-left:3px solid var(--trust-blue);font-size:1.17rem;}
+    .results-box ul {list-style-type:circle;margin:12px 0 0 38px;font-size:1.05rem;}
+    .faq-box {background:var(--faq-bg);}
+    .faq-title {font-size:2rem;display:block;color:var(--trust-blue);font-weight:700;margin-bottom:18px;}
+    .faq-list {margin-top:12px;}
+    .faq-q {
+      margin:7px 0 4px 0;
+      cursor:pointer;
+      font-weight:500;
+      padding:11px 18px;
+      background:#eff7ff;
+      border-radius:14px;
+      border:none;
+      font-size:1.13rem;
+      width:100%;
+      color:#2176ff;
+      box-shadow:0 2px 8px #2176ff15;
+      text-align:left;
+      transition:background .17s;
+    }
+    .faq-q:focus, .faq-q:hover {background:#e3f7ef;}
+    .faq-a {
+      margin:0 0 12px 0;
+      padding:12px 16px;
+      background:var(--glass-bg);
+      border-radius:10px;
+      color:#222;
+      font-size:1.09rem;
+      box-shadow:0 1px 7px #22bb6620;
+      display:none;
+    }
+    .faq-q.open + .faq-a {display:block;}
+    .cta-box {text-align:center;}
+    .cta-box .bold {font-weight:bold;}
     .cta-box .icon {vertical-align:middle;margin-right:5px;}
+    .cta-box .whatsapp-num {font-size:1.16rem;font-weight:bold;letter-spacing:.06em;color:var(--growth-green);}
     .cta-box .lead-magnet {margin-top:16px;}
     .footer {
-      background: var(--winabler-gradient); border-top: 2.2px solid #e8f5e9; padding: 32px 0;
-      text-align: center; font-size: 1.16rem; color: var(--winabler-dark);
-      display: flex; align-items: center; justify-content: center;gap:20px;flex-wrap:wrap;
+      background:var(--winabler-gradient);border-top:2.2px solid #e8f5e9;padding:28px 0;text-align:center;font-size:1.13rem;font-family:'Inter',Arial,sans-serif;color:var(--winabler-dark);
+      display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
     }
-    .footer img {height:44px; vertical-align:middle; margin-right:16px; border-radius: 7px; box-shadow: 0 2px 18px #d4e15733;}
+    .footer img {height:40px;vertical-align:middle;margin-right:18px;border-radius:7px;box-shadow:0 2px 18px #2176ff33;}
     .footer-email {display:flex;align-items:center;}
     .footer-email svg {margin-right:6px;}
-    .footer-email-link {color:#222; text-decoration:underline; font-weight:bold; padding-left:1px;transition: color 0.18s;}
-    .footer-email-link:hover{color:#d4e157;}
+    .footer-email-link {color:#222;text-decoration:underline;font-weight:600;}
+    .footer-email-link:hover{color:#ff7a36;}
     @media (max-width:860px) {
-      .navbar {height: 86px;}
-      .navbar img {height:52px;}
-      .hero-logo img {height:80px;}
-      .page-wrap {padding: 90px 2vw;}
-      .section-title {font-size:1.32rem;}
-      .feature-glass {width:97vw; max-width:370px;}
-      .features-list {gap:16px;}
-      .problem-box, .comparison-box, .what-box, .results-box, .faq-box, .cta-box, .pricing-box, .social-proof-box {padding:20px 7px;}
+      .hero-logo img {height:82px;}
+      .section-title {font-size:1.15rem;}
+      .feature-glass {width:90vw;max-width:320px;}
+      .features-list {gap:13px;}
+      .section {padding:0;}
+      .problem-box, .comparison-box, .what-box, .results-box, .cta-box, .pricing-box, .social-proof-box {padding:14px 7px;}
       .footer {font-size:1rem;}
     }
   </style>
 </head>
 <body>
-  <div class="navbar">
+  <div class="hero-logo">
     <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
-    <span class="navbar-title"><strong>Enabling Your Win</strong></span>
   </div>
-  <div class="page-wrap">
-    <!-- HERO LOGO + HEADLINE -->
-    <div class="hero-logo">
-      <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Large Logo">
-    </div>
-    <!-- PROBLEM SECTION -->
-    <div class="section problem-box">
-      <div class="section-title"><strong>The Hidden Cost of Abandoned Carts</strong></div>
-      <ul>
-        <li><strong>₹8-12L</strong> in lost revenue (for brands doing 500+ orders/month)</li>
-        <li><strong>Customers</strong> lost to competitors (they’re shopping elsewhere)</li>
-        <li><strong>Time</strong> chasing refunds (COD returns kill cash flow)</li>
-      </ul>
-      <div style="margin:22px 0 8px 0;"><strong>You’ve tried:</strong></div>
-      <ul>
-        <li><span class="icon">❌</span>Email recovery (<strong>18%</strong> open rate, customers ignore it)</li>
-        <li><span class="icon">❌</span>SMS (feels spammy, low conversion)</li>
-        <li><span class="icon">❌</span>Generic WhatsApp tools (robotic, one-size-fits-all)</li>
-      </ul>
-      <div style="margin-top:28px;font-size:1.22rem;"><strong>What if you could recover <span style="color:#25d366;">25-30%</span> of those carts?</strong></div>
-      <div style="font-size:1.25rem;margin-top:8px;"><strong>That’s ₹2-3L extra</strong> per month. Back in your pocket.</div>
-    </div>
-    <!-- COMPARISON SECTION -->
-    <div class="section comparison-box">
-      <div class="section-title"><strong>What Makes Winabler Different?</strong></div>
-      <table class="comparison-table">
-        <tr>
-          <th>What Matters Most</th>
-          <th>Winabler</th>
-          <th>Other Tools</th>
-        </tr>
-        <tr>
-          <td><strong>Sounds Like Your Brand</strong></td>
-          <td><em>Messages crafted in YOUR voice</em> – customers think a <strong>real person</strong> texted</td>
-          <td>Generic templates that scream “automation”</td>
-        </tr>
-        <tr>
-          <td><strong>WhatsApp-First</strong> <span class="icon">
-            <svg width="22" height="22" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/></svg>
-          </span></td>
-          <td>Built for India – <strong>90% open rates</strong>, native WhatsApp experience</td>
-          <td>Email-focused tools, WhatsApp as an afterthought</td>
-        </tr>
-        <tr>
-          <td><strong>Setup Time</strong></td>
-          <td>Live in <em>48 hours</em> – we do everything</td>
-          <td>2-3 weeks of back-and-forth, DIY setup</td>
-        </tr>
-        <tr>
-          <td><strong>Personalization</strong></td>
-          <td>Dynamic messages by product, cart value, customer type</td>
-          <td>Same message to everyone</td>
-        </tr>
-        <tr>
-          <td><strong>Results You See</strong></td>
-          <td><strong>25-30% recovery rate, transparent dashboard</strong></td>
-          <td>8-12% recovery, vague reporting</td>
-        </tr>
-        <tr>
-          <td><strong>Pricing</strong></td>
-          <td>Pay only when you see results (performance-based)</td>
-          <td>Fixed monthly fees whether it works or not</td>
-        </tr>
-      </table>
-    </div>
-    <!-- FEATURES SECTION - HOW WINABLER WORKS -->
-    <div class="section section-features">
-      <div class="section-title"><strong>How Winabler Works (The Simple Version)</strong></div>
-      <div class="features-list">
-        <div class="feature-glass">
-          <div class="feature-icons">🧑‍💼</div>
-          <div class="feature-step"><strong>Step 1: We Learn Your Brand (Week 1)</strong></div>
-          <ul>
-            <li>Discovery call to <strong>extract your brand voice</strong></li>
-            <li>Analyze Instagram, products, reviews</li>
-            <li>Craft custom message flows – your approval first</li>
-          </ul>
-        </div>
-        <div class="feature-glass">
-          <div class="feature-icons">⚡</div>
-          <div class="feature-step"><strong>Step 2: We Build Your Custom System (48 Hours)</strong></div>
-          <ul>
-            <li>Connect to <em>Shopify - no coding needed</em></li>
-            <li>5-7 sequences for visitors, repeats, high-value, COD/prepaid</li>
-            <li>Set up <strong>real-time tracking dashboard</strong></li>
-          </ul>
-        </div>
-        <div class="feature-glass">
-          <div class="feature-icons">🚀</div>
-          <div class="feature-step"><strong>Step 3: Launch & Optimize</strong></div>
-          <ul>
-            <li>Soft launch (test on 10-20 carts)</li>
-            <li><strong>Monitor daily, tweak weekly</strong></li>
-            <li>Weekly calls; A/B test, iterate on results</li>
-          </ul>
-        </div>
-        <div class="feature-glass">
-          <div class="feature-icons">💬</div>
-          <div class="feature-step"><strong>Step 4: You See Results</strong></div>
-          <ul>
-            <li>Personalized WhatsApp messages sent at <strong>key intervals</strong></li>
-            <li>Messages *feel like a friend texting*, not bots</li>
-            <li><strong>25-30% convert and complete purchase</strong></li>
-            <li>Track every rupee in your dashboard</li>
-          </ul>
-        </div>
+  <div class="headline">Winabler: AI-Powered, Humanized Cart Recovery on WhatsApp</div>
+  <div class="subheadline">
+    Abandoned carts? Unlock lost sales with AI chats crafted in your brand’s voice—real connections, zero tech headaches.
+  </div>
+  <div class="section problem-box">
+    <div class="section-title"><span class="icon">💡</span> The Hidden Cost of Abandoned Carts</div>
+    <ul>
+      <li><strong>₹8-12L</strong> in lost revenue (for brands doing 500+ orders/month)</li>
+      <li><strong>Customers</strong> lost to competitors</li>
+      <li><strong>Time</strong> chasing refunds (COD returns kill cash flow)</li>
+    </ul>
+    <div style="margin:22px 0 8px 0;"><strong>You’ve tried:</strong></div>
+    <ul>
+      <li>❌ Email recovery (<strong>18%</strong> open rate, always ignored)</li>
+      <li>❌ SMS (feels spammy, low conversion)</li>
+      <li>❌ Generic WhatsApp tools (robotic, one-size-fits-all)</li>
+    </ul>
+    <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
+  </div>
+  <div class="section what-box">
+    <div class="section-title"><span class="icon">✨</span> What's Included</div>
+    <ul>
+      <li><strong>Custom Brand Voice Analysis</strong> – messages sound exactly like you</li>
+      <li><strong>WhatsApp Automation Setup</strong> – Shopify integration, testing handled</li>
+      <li><strong>Real-Time Dashboard</strong> – track every order recovered, ROI in real-time</li>
+      <li><strong>Weekly Optimization Calls</strong> – ongoing improvement, not “set & forget”</li>
+      <li><strong>Regional Language Support</strong> – Hindi, Tamil, Telugu</li>
+      <li><strong>Performance Tracking</strong> – 100% transparent recovery report</li>
+    </ul>
+  </div>
+  <div class="section comparison-box">
+    <div class="section-title"><span class="icon">★</span> What Makes <span style="color:#2176ff;">Winabler</span> <span style="color:#22bb66;">Different</span></div>
+    <table class="comparison-table">
+      <tr>
+        <th>What Matters Most</th>
+        <th>Winabler</th>
+        <th>Other Tools</th>
+      </tr>
+      <tr>
+        <td><span class="icon">🎤</span> Sounds Like Your Brand</td>
+        <td>Messages crafted in <strong>your voice</strong>—feels personal</td>
+        <td>Generic templates, robotic automation</td>
+      </tr>
+      <tr>
+        <td><span class="icon">📱</span> WhatsApp-First</td>
+        <td>Built for India—<strong>90% open rates</strong>, native WhatsApp experience</td>
+        <td>Email-first tools, WhatsApp is an afterthought</td>
+      </tr>
+      <tr>
+        <td><span class="icon">⚡</span> Setup Time</td>
+        <td>Live in <strong>48 hours</strong> (done-for-you)</td>
+        <td>2-3 weeks DIY setup</td>
+      </tr>
+      <tr>
+        <td><span class="icon">🎯</span> Personalization</td>
+        <td>Dynamic messages: product, cart value, customer type</td>
+        <td>Same message for everyone</td>
+      </tr>
+      <tr>
+        <td><span class="icon">📈</span> Results You See</td>
+        <td><strong>25-30% recovery</strong> rate, transparent dashboard</td>
+        <td>8-12% with vague reporting</td>
+      </tr>
+      <tr>
+        <td><span class="icon">💳</span> Pricing</td>
+        <td>Pay only for results (performance-based)</td>
+        <td>Fixed fee regardless of outcome</td>
+      </tr>
+    </table>
+  </div>
+  <div class="section section-features">
+    <div class="section-title"><span class="icon">🚀</span> How Winabler Works—The Simple Version</div>
+    <div class="features-list">
+      <div class="feature-glass">
+        <div class="feature-icons">🧑‍💼</div>
+        <div class="feature-step"><strong>Step 1: We Learn Your Brand</strong></div>
+        <ul>
+          <li>Discovery call to extract your brand voice</li>
+          <li>Analyze Instagram, products, reviews</li>
+          <li>Custom message flows for your approval</li>
+        </ul>
       </div>
-    </div>
-    <!-- WHAT YOU GET SECTION -->
-    <div class="section what-box">
-      <div class="section-title"><strong>What’s Included</strong></div>
-      <ul>
-        <li><strong>Custom Brand Voice Analysis</strong> – messages sound exactly like you</li>
-        <li><strong>WhatsApp Automation Setup</strong> – Shopify integration, testing handled</li>
-        <li><strong>Real-Time Dashboard</strong> – track every order recovered, ROI in real-time</li>
-        <li><strong>Weekly Optimization Calls</strong> – ongoing improvement, not “set & forget”</li>
-        <li><strong>Regional Language Support</strong> – Hindi, Tamil, Telugu (your customers’ language)</li>
-        <li><strong>Performance Tracking</strong> – 100% transparent recovery report</li>
-      </ul>
-    </div>
-    <!-- PRICING SECTION -->
-    <div class="section pricing-box">
-      <div class="section-title"><strong>Choose Your Plan</strong></div>
-      <div class="pricing-highlight"><strong>🏆 Most Popular: Performance-Based</strong><br>
-      ₹25,000 setup + <strong>8% of recovered sales</strong></div>
-      <ul>
-        <li>Perfect for <em>bootstrapped & cash-conscious</em> brands</li>
-        <li>Zero risk - pay only when you win</li>
-        <li>Full setup + tracking + weekly optimization</li>
-      </ul>
-      <div style="margin-top:7px;"><em>Example:</em> Recover ₹8L in 6 months, pay ₹25K + ₹64K = ₹89K, net ₹7.11L.</div>
-      <div class="pricing-highlight"><strong>⭐ Premium: White-Glove Service</strong><br>
-      ₹50,000 setup + ₹12,000/month
+      <div class="feature-glass">
+        <div class="feature-icons">⚡</div>
+        <div class="feature-step"><strong>Step 2: Build Your Custom System (48h)</strong></div>
+        <ul>
+          <li>Connect to Shopify—no coding needed</li>
+          <li>5-7 sequences for visitors, repeats, high-value, COD/prepaid</li>
+          <li>Set up real-time dashboard</li>
+        </ul>
       </div>
-      <ul>
-        <li>For <strong>concierge-level service</strong>, ₹3Cr+ annual revenue</li>
-        <li>Priority support & bi-weekly strategy calls</li>
-        <li>Seasonal campaign creation & advanced features</li>
-      </ul>
-      <div style="margin-top:9px;">Not sure? <strong>Book a free cart audit</strong> – we’ll recommend what fits your business.</div>
-    </div>
-    <!-- SOCIAL PROOF SECTION -->
-    <div class="section social-proof-box">
-      <div class="section-title"><strong>What D2C Founders Say</strong></div>
-      <div style="margin-bottom:18px;">
-        <strong>“We were losing ₹12L monthly to abandoned carts. Winabler helped us recover 28% – that's ₹3.36L back in our pocket every month. The messages sound exactly like our brand, customers love it.”</strong><br>
-        <em>— Ananya S., Founder, Urban Threads (Fashion)</em>
+      <div class="feature-glass">
+        <div class="feature-icons">🔧</div>
+        <div class="feature-step"><strong>Step 3: Launch & Optimize</strong></div>
+        <ul>
+          <li>Soft launch, test on pilot carts</li>
+          <li>Monitor daily, tweak weekly</li>
+          <li>Weekly calls, A/B test flows</li>
+        </ul>
       </div>
-      <div style="margin-bottom:18px;">
-        <strong>“Setup took 2 days. Results started showing in the first week. We've recovered ₹4.2L in 60 days. The ROI is insane.”</strong><br>
-        <em>— Rahul M., Co-Founder, Pure Roots (Wellness)</em>
-      </div>
-      <div style="margin-bottom:6px;">
-        <strong>“Finally, a tool that doesn't sound like a robot. Our customers actually respond and engage. 26% recovery rate vs 9% we had with email.”</strong><br>
-        <em>— Priya K., Founder, Bloom Beauty (Skincare)</em>
-      </div>
-    </div>
-    <!-- RESULTS SECTION -->
-    <div class="section results-box">
-      <div class="section-title"><strong>The Numbers Don’t Lie</strong></div>
-      <ul>
-        <li><strong>📊 26.3% average recovery rate</strong> (vs 8-10% email industry standard)</li>
-        <li><strong>💰 ₹4-6L recovered per month</strong> (for 500-700 orders/month)</li>
-        <li><strong>⚡ 90% WhatsApp open rate</strong> (vs 18-22% email)</li>
-        <li><strong>🚀 48-hour setup time</strong> (vs 2-3 weeks with other tools)</li>
-        <li><strong>💚 34% repeat customer recovery rate</strong> (loyal customers love the personal touch)</li>
-      </ul>
-    </div>
-    <!-- FAQ SECTION -->
-    <div class="section faq-box">
-      <div class="section-title"><strong>Common Questions</strong></div>
-      <div><strong>Q:</strong> Is this legal? Won’t customers find it spammy?<br>
-        <strong>A:</strong> Completely legal. Customers opt-in at checkout. Messages are personalized, helpful (not spammy!), opt-out anytime. <strong>Open rates of 90%+</strong> prove customers want them.
-      </div>
-      <div><strong>Q:</strong> How long does setup take?<br>
-        <strong>A:</strong> 48 hours after discovery call. Week 1: strategy & message creation. Week 2: live and recovering carts.
-      </div>
-      <div><strong>Q:</strong> What if I don't have WhatsApp Business API?<br>
-        <strong>A:</strong> No problem! We help you get approved (2-3 days, free).
-      </div>
-      <div><strong>Q:</strong> Can I see results before committing?<br>
-        <strong>A:</strong> Yes! Book a free cart audit – see your losses and projected recovery. No commitment.
-      </div>
-      <div><strong>Q:</strong> How do you track recovered sales?<br>
-        <strong>A:</strong> 100% transparent. Orders tagged in Shopify. Real-time Google Sheet dashboard.
-      </div>
-      <div><strong>Q:</strong> What if it doesn't work?<br>
-        <strong>A:</strong> Performance-based pricing: you only pay when it works. We've helped 15+ brands get 25-30% recovery rates.
-      </div>
-    </div>
-    <!-- FINAL CTA SECTION -->
-    <div class="section cta-box">
-      <div class="section-title"><strong>Ready to Stop Losing ₹5-10L Monthly?</strong></div>
-      Here’s what happens next:
-      <div style="margin:13px 0;">
-        <strong>1️⃣ Book Your Free Cart Audit (15 min)</strong><br>
-        We analyze your abandoned cart data and show you exactly how much you're losing.<br>
-        <strong>2️⃣ See Your Custom Strategy</strong><br>
-        A personalized recovery plan for your brand.<br>
-        <strong>3️⃣ Choose Your Plan</strong><br>
-        Performance-based (zero risk) or monthly subscription.<br>
-        <strong>4️⃣ Go Live in 48 Hours</strong><br>
-        We handle everything – you just watch recovered orders roll in.
-      </div>
-      <div>No tech skills needed. No long contracts. <em>No risk.</em></div>
-      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">
-        <span class="icon">🗓️</span><strong>Book Your Free Cart Audit Now</strong>
-      </a>
-      <div style="margin:18px 0 6px 0;">
-        Or <span class="icon">
-          <svg width="23" height="23" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/>
-        </svg>
-        </span> WhatsApp us directly: <strong>+91-XXXXX-XXXXX</strong>
-      </div>
-      <div class="lead-magnet">
-        <strong>Still thinking?</strong><br>
-        <em>Download our free guide: "The 5 WhatsApp Messages That Recover 30% of Abandoned Carts"</em> <!-- Add actual link when ready -->
+      <div class="feature-glass">
+        <div class="feature-icons">💬</div>
+        <div class="feature-step"><strong>Step 4: You See Results</strong></div>
+        <ul>
+          <li>Personal WhatsApp messages at key intervals</li>
+          <li>Feels like a friend texting, not a bot</li>
+          <li>25-30% convert, full dashboard visibility</li>
+        </ul>
       </div>
     </div>
   </div>
-  <!-- FOOTER WITH MAIL ICON -->
+  <div class="section pricing-box">
+    <div class="section-title"><span class="icon">💰</span> Choose Your Plan</div>
+    <div class="pricing-card">
+      <div class="title">🏆 Most Popular: Performance-Based</div>
+      <div>₹25,000 setup + <strong>8% of recovered sales</strong></div>
+      <ul>
+        <li>Perfect for bootstrapped brands</li>
+        <li>Zero risk—pay only when you see results</li>
+        <li>Full setup, tracking, optimization</li>
+      </ul>
+      <div style="margin-top:8px;"><em>Example:</em> Recover ₹8L in 6 months, pay ₹25K + ₹64K = ₹89K, net ₹7.11L.</div>
+      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book a Free Consultation</a>
+    </div>
+    <div class="pricing-card">
+      <div class="title">⭐ Premium: White-Glove Service</div>
+      <div>₹50,000 setup + ₹12,000/month</div>
+      <ul>
+        <li>Concierge-level service</li>
+        <li>Priority support & bi-weekly strategy</li>
+        <li>Seasonal campaigns, advanced features</li>
+      </ul>
+      <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book a Free Consultation</a>
+    </div>
+    <div style="margin-top:8px;text-align:center;">Not sure? <strong>Book a free consult</strong> and we'll recommend what's best.</div>
+  </div>
+  <div class="section social-proof-box">
+    <div class="section-title"><span class="icon">🌟</span> What D2C Founders Say</div>
+    <blockquote>
+      “We were losing ₹12L monthly to abandoned carts. Winabler helped us recover 28% – that's ₹3.36L back every month. Messages sound like our brand, customers love it.”
+    </blockquote>
+    <div style="font-size:.97rem;">— Ananya S., Founder, Urban Threads (Fashion)</div>
+    <blockquote>
+      “Setup took 2 days. Results in week one. Recovered ₹4.2L in 60 days. The ROI is insane.”
+    </blockquote>
+    <div style="font-size:.97rem;">— Rahul M., Co-Founder, Pure Roots (Wellness)</div>
+    <blockquote>
+      “Finally, a tool that doesn't sound like a robot. Our customers actually respond. 26% recovery vs 9% with email.”
+    </blockquote>
+    <div style="font-size:.97rem;">— Priya K., Founder, Bloom Beauty (Skincare)</div>
+  </div>
+  <div class="section results-box">
+    <div class="section-title"><span class="icon">📈</span> The Numbers Don't Lie</div>
+    <ul>
+      <li>26.3% <strong>average recovery rate</strong> (vs 8-10% with email)</li>
+      <li>₹4-6L <strong>recovered per month</strong> (for 500-700 orders/month)</li>
+      <li>90% <strong>WhatsApp open rate</strong> (vs 18-22% email)</li>
+      <li>48-hour <strong>setup time</strong> (vs 2-3 weeks)</li>
+      <li>34% <strong>repeat-customer recovery</strong> (loyalty pays off)</li>
+    </ul>
+  </div>
+  <div class="section faq-box">
+    <span class="faq-title">🤔 Frequently Asked Questions</span>
+    <div class="faq-list">
+      <button class="faq-q" onclick="this.classList.toggle('open')">Is this legal? Won't customers find it spammy?</button>
+      <div class="faq-a">
+        Absolutely legal. Customers opt-in at checkout. Messages are personalized, not spam. 90%+ open rate means customers want them. Opt-out anytime.
+      </div>
+      <button class="faq-q" onclick="this.classList.toggle('open')">How long does setup take?</button>
+      <div class="faq-a">
+        48 hours post-discovery call. Week 1: strategy/msg. Week 2: you’re live.
+      </div>
+      <button class="faq-q" onclick="this.classList.toggle('open')">What if I don't have WhatsApp Business API?</button>
+      <div class="faq-a">
+        No problem! We guide you on setup—approval in 2-3 days, free.
+      </div>
+      <button class="faq-q" onclick="this.classList.toggle('open')">Can I see results before committing?</button>
+      <div class="faq-a">
+        Yes! Book a free consult. We show your losses and projected recovery. No commitment.
+      </div>
+      <button class="faq-q" onclick="this.classList.toggle('open')">How do you track recovered sales?</button>
+      <div class="faq-a">
+        100% transparent. Orders tagged in Shopify; real-time dashboard shared.
+      </div>
+      <button class="faq-q" onclick="this.classList.toggle('open')">What if it doesn't work?</button>
+      <div class="faq-a">
+        Performance-based: pay only when you win! 15+ brands have reached 25–30% recovery.
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll('.faq-q').forEach(q => {
+        q.addEventListener('click', function() {
+          document.querySelectorAll('.faq-q').forEach(other => {
+            if(other !== this) other.classList.remove('open');
+          });
+          this.classList.toggle('open');
+        });
+      });
+    </script>
+  </div>
+  <div class="section cta-box">
+    <div class="section-title"><span class="icon">🚀</span> Ready to Stop Losing ₹5-10L Monthly?</div>
+    <div style="margin:13px 0;">
+      <span class="bold">Here’s what happens next:</span>
+      <br>1️⃣ Book Your Free 30-Minute Consult (15 min): We analyze your abandoned cart data and show you exactly what you’re losing.
+      <br>2️⃣ Personalized recovery plan. <br>3️⃣ Choose your plan.<br>4️⃣ Go live in 48 hours—watch recovered orders roll in.
+    </div>
+    <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
+    <div style="margin:18px 0 6px 0;">
+      <span class="icon">
+        <svg width="23" height="23" viewBox="0 0 32 32"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/>
+      </span>
+      WhatsApp us directly: <span class="whatsapp-num">+91-8467861616</span>
+    </div>
+    <div class="lead-magnet">
+      <strong>Still thinking?</strong> <br>
+      Download our free guide: <em>"The 5 WhatsApp Messages That Recover 30% of Abandoned Carts"</em>
+    </div>
+  </div>
   <footer class="footer">
     <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
     <span>&copy; 2025 Winabler. Enabling your win.</span>
     <span class="footer-email">
       <svg width="25" height="25" viewBox="0 0 24 24" fill="none">
-        <rect width="24" height="24" rx="5" fill="#d4e157"/>
+        <rect width="24" height="24" rx="5" fill="#ff7a36"/>
         <path d="M5 7l7 5 7-5" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
         <path d="M5 7v10h14V7" stroke="#222" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
