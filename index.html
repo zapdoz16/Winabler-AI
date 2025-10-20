@@ -34,11 +34,11 @@
     .hero-logo img {height:146px;width:auto;border-radius:33px;box-shadow:0 18px 70px #d4e15777,0 2px 32px #94949449;animation:fadeInDown 1.1s;}
     .hero-area {max-width:950px;margin:54px auto 52px auto;background:var(--glass-bg);border-radius:42px;box-shadow:var(--shadow-main);padding:74px 42px 56px 42px;text-align:center;position:relative;animation:fadeIn 1.3s .13s backwards;}
     .page-gradient-title {font-size:3.3rem;font-weight:850;line-height:1.19;letter-spacing:.018em;margin-bottom:34px;background:linear-gradient(90deg,#949494 10%,#d4e157 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;text-shadow:0 8px 38px #d4e15719,0 2px 10px #94949433;padding-bottom:20px;animation:textGlow 2s both;}
-    .subheadline {color:var(--logo-gray);font-size:1.48rem;line-height:1.44;font-weight:500;margin-bottom:36px;padding-bottom:16px;animation:fadeInUp 1.2s .6s backwards;}
+    .subheadline {color:var(--logo-gray);font-size:1.48rem;line-height:1.44;font-weight:500;margin-bottom:16px;padding-bottom:4px;animation:fadeInUp 1.2s .6s backwards;}
+    .hero-riskline {font-size:1.14rem;color:#949494;font-weight:700;padding-bottom:24px;margin-top:0;}
     .section {max-width: 1000px; margin: 0 auto 52px auto; position: relative;}
     .section-gradient-title {font-size:2rem;font-weight:700;text-align:center;margin-bottom:34px;letter-spacing:.01em;position:relative;padding-bottom:13px;background:linear-gradient(90deg,#949494 10%,#d4e157 90%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;color:transparent;text-shadow:0 9px 30px #d4e15710,0 1.5px 8px #94949433;line-height:1.3;border-bottom:none;animation:fadeInUp 0.7s forwards;}
     .problem-box,.comparison-box,.what-box,.cta-box,.pricing-box,.social-proof-box,.faq-box{background:var(--glass-bg);border-radius:36px;box-shadow:var(--shadow-main);padding:48px 38px;margin-bottom:50px;border-left:none;transition:box-shadow .2s;}
-    /* All main text bullets and lists */
     .problem-box ul,.problem-box li,.what-box ul,.features-list,.feature-glass,.footer,.cta-box,.pricing-card,.comparison-table td,.comparison-table th,.social-proof-box blockquote,.animated-impact,.subheadline,.faq-a {color:var(--logo-gray)!important;font-weight:500;letter-spacing:0.01em;}
     .problem-box ul, .what-box ul {margin: 25px 0 0 55px;}
     .problem-box li, .what-box li {margin-bottom: 17px;}
@@ -91,7 +91,6 @@
       animation: fadeInUp 1s 1s backwards;
     }
     .floating-cta:hover,.floating-cta:focus {background:#c8ce1d;color:#949494;transform:scale(1.07);}
-    /* -------- MOBILE CARD COMPARISON ----------- */
     .winabler-comparison-table {
       display: flex;
       flex-direction: column;
@@ -153,6 +152,26 @@
     .pricing-card{margin-bottom:32px;padding:25px 25px 18px 25px;background:#e7f7ee80;border-radius:32px;box-shadow:0 2px 14px #d4e15722;}
     .pricing-card .title{color:var(--logo-green)!important;font-size:1.17rem;font-weight:bold;}
     .pricing-card ul{margin-top:12px;text-align:left;}
+    .pricing-highlight {
+      font-size: 1.09rem;
+      color: #949494;
+      margin-bottom: 8px;
+      font-weight: 600;
+      background: #e7f7ee;
+      padding: 11px 16px;
+      border-radius: 16px;
+      display: inline-block;
+    }
+    .pricing-card .zero-risk {
+      color: #d4e157;
+      font-weight: bold;
+      font-size: 1.09rem;
+      background: #f6fde7;
+      border-radius: 11px;
+      padding: 6px 14px;
+      margin-bottom: 11px;
+      display:inline-block;
+    }
     .social-proof-box blockquote{margin:21px 0 9px 0;padding-left:16px;border-left:4px solid #d4e157;border-radius:7px;font-size:1.17rem;background:#f9f9f9;color:#949494;}
     .faq-box{background:var(--faq-bg);}
     .faq-list{margin-top:16px;}
@@ -185,13 +204,15 @@
     <div class="subheadline">
       Abandoned carts? Unlock lost sales with AI chats crafted in your brand’s voice—real connections, zero tech headaches.
     </div>
+    <div class="hero-riskline">
+      No Risk, All Reward: Only pay when you make money—Winabler’s pure performance model means zero upfront costs and complete peace of mind.
+    </div>
   </div>
   <div class="section problem-box">
     <div class="section-gradient-title">💡 The Hidden Cost of Abandoned Carts</div>
     <ul>
       <li>
-        <strong>Losing up to 30% of monthly revenue, regardless of your brand size</strong>
-        <div class="animated-impact">(Whether you do ₹10L or ₹1Cr a month, abandoned carts take a massive bite out of your sales.)</div>
+        <strong>Up to 70–75% of all carts are abandoned—meaning you’re missing out on most of your potential orders every month.</strong>
       </li>
       <li><strong>Customers</strong> lost to competitors</li>
       <li><strong>Time</strong> chasing refunds (COD returns kill cash flow)</li>
@@ -278,11 +299,11 @@
         <div class="row-title">💳 <span>Pricing</span></div>
         <div class="row-main">
           <div class="row-label">Winabler</div>
-          <div class="row-value">Pay only for results (performance-based)</div>
+          <div class="row-value">Pure performance: zero setup fee, <strong>we win only when you win</strong></div>
         </div>
         <div class="row-main">
           <div class="row-label">Other Tools</div>
-          <div class="row-value">Fixed fee regardless of outcome</div>
+          <div class="row-value">Setup fees, monthly charges regardless of outcome</div>
         </div>
       </div>
     </div>
@@ -332,27 +353,27 @@
   <div class="section pricing-box">
     <div class="section-gradient-title">💰 Choose Your Plan</div>
     <div class="pricing-card">
-      <div class="title">🏆 Most Popular: Performance-Based</div>
-      <div>₹25,000 setup + <strong>8% of recovered sales</strong></div>
+      <span class="zero-risk">No Setup Fee. No Risk.</span>
+      <div class="title">Pure Performance: We Win Only When You Win</div>
+      <div class="pricing-highlight">Flat <strong>15% of recovered sales</strong> — you pay only when you make money</div>
       <ul>
-        <li>Perfect for bootstrapped brands</li>
-        <li>Zero risk—pay only when you see results</li>
-        <li>Full setup, tracking, optimization</li>
+        <li>No upfront cost</li>
+        <li>All features, service, and optimization included</li>
       </ul>
-      <div style="margin-top:8px;"><em>Example:</em> Recover ₹8L in 6 months, pay ₹25K + ₹64K = ₹89K, net ₹7.11L.</div>
       <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
     </div>
     <div class="pricing-card">
-      <div class="title">⭐ Premium: White-Glove Service</div>
-      <div>₹50,000 setup + ₹12,000/month</div>
+      <span class="zero-risk">Enterprise Option: For Brands with 1000+ Monthly Orders</span>
+      <div class="title">Enterprise Performance</div>
+      <div class="pricing-highlight">Flat <strong>12% of recovered sales</strong> — same zero-risk model</div>
       <ul>
-        <li>Concierge-level service</li>
-        <li>Priority support & bi-weekly strategy</li>
-        <li>Seasonal campaigns, advanced features</li>
+        <li>No upfront cost</li>
+        <li>Priority support, advanced features, custom analytics</li>
+        <li>We win only when you win</li>
       </ul>
       <a class="cta-btn" href="https://calendly.com/contact-winabler" target="_blank">Book Your Free 30-Minute Consult</a>
     </div>
-    <div style="margin-top:8px;text-align:center;">Not sure? <strong>Book a free consult</strong> and we'll recommend what's best.</div>
+    <div style="margin-top:8px;text-align:center;">Not sure? <strong>Book a free consult</strong> — we’ll recommend what’s best for your brand.</div>
   </div>
   <div class="section social-proof-box">
     <div class="section-gradient-title">🌟 What D2C Founders Say</div>
@@ -382,7 +403,7 @@
       </div>
       <button class="faq-q">What if I don't have WhatsApp Business API?</button>
       <div class="faq-a">
-        No problem! We guide you on setup—approval in 2-3 days, free.
+        No problem! We guide you on setup—approval in 2–3 days, free.
       </div>
       <button class="faq-q">Can I see results before committing?</button>
       <div class="faq-a">
@@ -394,14 +415,15 @@
       </div>
       <button class="faq-q">What if it doesn't work?</button>
       <div class="faq-a">
-        Performance-based: pay only when you win! 15+ brands have reached 25–30% recovery.
+        Pure performance model—pay only when you win! 15+ brands have reached 25–30% recovery.
       </div>
     </div>
   </div>
   <div class="section cta-box">
-    <div class="section-gradient-title">🚀 Ready to Stop Losing ₹5-10L Monthly?</div>
+    <div class="section-gradient-title">🚀 Ready to turn abandoned carts into your biggest growth lever?</div>
     <div style="margin:22px 0;">
-      <span style="font-weight:600;font-size:1.17rem;">Here’s what happens next:</span>
+      <span style="font-weight:600;font-size:1.17rem;">Let's win back your revenue together—risk free, results guaranteed.</span><br><br>
+      Here’s what happens next:
       <br>1️⃣ Book Your Free 30-Minute Consult: We analyze your abandoned cart data and show you exactly what you’re losing.
       <br>2️⃣ Personalized recovery plan. <br>3️⃣ Choose your plan.<br>4️⃣ Go live in 48 hours—watch recovered orders roll in.
     </div>
