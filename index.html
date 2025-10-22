@@ -248,7 +248,10 @@
       font-weight: 700;
       text-align: center;
       margin-bottom: 60px;
-      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
       position: relative;
     }
 
@@ -449,73 +452,6 @@
       color: var(--text-primary);
     }
 
-    /* Pricing Section */
-    .pricing-section {
-      background: linear-gradient(to bottom, var(--bg-dark), #111111);
-    }
-
-    .pricing-cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .pricing-card {
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .pricing-card.featured {
-      border: 2px solid var(--primary);
-      transform: scale(1.05);
-    }
-
-    .pricing-badge {
-      position: absolute;
-      top: 20px;
-      right: -30px;
-      background: var(--primary);
-      color: var(--bg-dark);
-      padding: 5px 30px;
-      transform: rotate(45deg);
-      font-weight: 600;
-      font-size: 0.8rem;
-    }
-
-    .pricing-title {
-      font-size: 1.5rem;
-      font-weight: 600;
-      margin-bottom: 15px;
-      color: var(--text-primary);
-    }
-
-    .pricing-price {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--primary);
-    }
-
-    .pricing-features {
-      list-style: none;
-      margin-bottom: 30px;
-    }
-
-    .pricing-features li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .pricing-features li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--primary);
-      font-weight: 600;
-    }
-
     /* Testimonials Section */
     .testimonials-section {
       background: linear-gradient(to bottom, #111111, var(--bg-dark));
@@ -637,7 +573,10 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 20px;
-      color: var(--text-primary);
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .cta-subtitle {
@@ -671,6 +610,12 @@
     .whatsapp-number {
       font-weight: 600;
       color: var(--primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .whatsapp-number:hover {
+      text-decoration: underline;
     }
 
     /* Footer */
@@ -848,7 +793,6 @@
         <a href="#features" class="nav-link">Features</a>
         <a href="#comparison" class="nav-link">Comparison</a>
         <a href="#how-it-works" class="nav-link">How It Works</a>
-        <a href="#pricing" class="nav-link">Pricing</a>
         <a href="#testimonials" class="nav-link">Testimonials</a>
       </nav>
       <a href="https://calendly.com/contact-winabler" target="_blank" class="cta-button">Book Free Consult</a>
@@ -1043,43 +987,6 @@
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="pricing-section">
-    <div class="container">
-      <h2 class="section-title">💰 Choose Your Plan</h2>
-      <div class="pricing-cards">
-        <div class="card pricing-card fade-in">
-          <div class="pricing-badge">Popular</div>
-          <h3 class="pricing-title">Pure Performance</h3>
-          <div class="pricing-price">15%</div>
-          <p>of recovered sales</p>
-          <ul class="pricing-features">
-            <li>No upfront cost</li>
-            <li>All features included</li>
-            <li>Full service & optimization</li>
-            <li>Weekly performance reviews</li>
-            <li>Multi-language support</li>
-          </ul>
-          <a href="https://calendly.com/contact-winabler" target="_blank" class="cta-button">Get Started</a>
-        </div>
-        <div class="card pricing-card featured fade-in">
-          <h3 class="pricing-title">Enterprise Performance</h3>
-          <div class="pricing-price">12%</div>
-          <p>of recovered sales</p>
-          <ul class="pricing-features">
-            <li>No upfront cost</li>
-            <li>Priority support</li>
-            <li>Advanced features</li>
-            <li>Custom analytics</li>
-            <li>Dedicated account manager</li>
-          </ul>
-          <a href="https://calendly.com/contact-winabler" target="_blank" class="cta-button">Get Started</a>
-        </div>
-      </div>
-      <p style="text-align: center; margin-top: 30px; color: var(--text-muted);">Not sure? <strong>Book a free consult</strong> — we'll recommend what's best for your brand.</p>
-    </div>
-  </section>
-
   <!-- Testimonials Section -->
   <section id="testimonials" class="testimonials-section">
     <div class="container">
@@ -1147,129 +1054,4 @@
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container">
-      <h2 class="cta-title">🚀 Ready to turn abandoned carts into your biggest growth lever?</h2>
-      <p class="cta-subtitle">Let's win back your revenue together—risk free, results guaranteed.</p>
-      <div class="cta-buttons">
-        <a href="https://calendly.com/contact-winabler" target="_blank" class="cta-button">Book Your Free 30-Minute Consult</a>
-        <a href="#pricing" class="secondary-button">View Pricing</a>
-      </div>
-      <div class="whatsapp-contact">
-        <svg class="whatsapp-icon" viewBox="0 0 32 32" fill="#25D366">
-          <circle cx="16" cy="16" r="16" fill="#25D366"/>
-          <path d="M22.1 21.3c-.2-.2-1.1-.6-2.2-1.2-.3-.1-.7-.3-1.1-.2-.3.1-.6.2-.9.5-.2.2-.4.5-.8.5-.8 0-1.4-.6-2-1.2-.3-.3-.8-1-1.1-1.5-.2-.4 0-.6.2-.8.1-.1.2-.2.3-.4.1-.2.1-.4 0-.5-.1-.1-.5-1.2-.7-1.6-.2-.5-.5-.5-.9-.5-.3-.1-.5-.1-.6 0s-.4.5-.4 1c0 .4.2 1.4 1.1 2.3.9.9 2.5 2.2 3.5 2.7a3.42 3.42 0 0 0 1.3.3c.6 0 1-.2 1.1-.6.1-.2.1-.5.1-.5z" fill="#fff"/>
-        </svg>
-        <span>WhatsApp us directly: <span class="whatsapp-number">+91-8467861616</span></span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-container">
-        <div class="footer-logo">
-          <img src="Winabler-Logo-White-Rectangular.jpg" alt="Winabler Logo">
-          <p>AI-Powered WhatsApp Cart Recovery for D2C Brands in India</p>
-        </div>
-        <div class="footer-links">
-          <h3 class="footer-title">Quick Links</h3>
-          <ul>
-            <li><a href="#problem">The Problem</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#comparison">Comparison</a></li>
-            <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-          </ul>
-        </div>
-        <div class="footer-links">
-          <h3 class="footer-title">Company</h3>
-          <ul>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="mailto:contact@winabler.in">Contact Us</a></li>
-            <li><a href="https://calendly.com/contact-winabler" target="_blank">Book a Call</a></li>
-          </ul>
-        </div>
-        <div class="footer-contact">
-          <h3 class="footer-title">Contact</h3>
-          <p>Email: <a href="mailto:contact@winabler.in">contact@winabler.in</a></p>
-          <p>WhatsApp: +91-8467861616</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Winabler. Enabling your win.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Floating CTA -->
-  <a href="https://calendly.com/contact-winabler" target="_blank" class="floating-cta">
-    <span>Book Free Consult</span>
-  </a>
-
-  <script>
-    // Header scroll effect
-    window.addEventListener('scroll', function() {
-      const header = document.getElementById('header');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-
-    // FAQ functionality
-    document.querySelectorAll('.faq-question').forEach(question => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        const isActive = question.classList.contains('active');
-        
-        // Close all other FAQs
-        document.querySelectorAll('.faq-question').forEach(q => {
-          q.classList.remove('active');
-        });
-        document.querySelectorAll('.faq-answer').forEach(a => {
-          a.classList.remove('active');
-        });
-        
-        // Open clicked FAQ if it wasn't already active
-        if (!isActive) {
-          question.classList.add('active');
-          answer.classList.add('active');
-        }
-      });
-    });
-
-    // Fade in elements on scroll
-    const fadeElements = document.querySelectorAll('.fade-in');
-    
-    const fadeInOnScroll = function() {
-      fadeElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < window.innerHeight - elementVisible) {
-          element.style.opacity = "1";
-          element.style.transform = "translateY(0)";
-        }
-      });
-    };
-    
-    // Set initial state
-    fadeElements.forEach(element => {
-      element.style.opacity = "0";
-      element.style.transform = "translateY(20px)";
-      element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    });
-    
-    window.addEventListener('scroll', fadeInOnScroll);
-    // Trigger once on load
-    window.addEventListener('load', fadeInOnScroll);
-  </script>
-</body>
-</html>
+ 
